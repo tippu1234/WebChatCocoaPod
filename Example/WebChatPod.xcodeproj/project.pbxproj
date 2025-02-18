@@ -46,7 +46,7 @@
 		CD57B2CC5DF70DD7FD1AAE34 /* Pods-WebChatPod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebChatPod_Example.release.xcconfig"; path = "Target Support Files/Pods-WebChatPod_Example/Pods-WebChatPod_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D6450DE3BDE17E8E9A8CE2E5 /* Pods_WebChatPod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebChatPod_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6F247893A6098DE1EAE10B0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		F3D2F11B86477AAD82DF919A /* WebChatPod.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WebChatPod.podspec; path = ../WebChatPod.podspec; sourceTree = "<group>"; };
+		F3D2F11B86477AAD82DF919A /* WebChatPod.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WebChatPod.podspec; path = ../WebChatPod.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

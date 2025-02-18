@@ -33,6 +33,15 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'WebChatPod/Classes/**/*'
   
+  s.pod_target_xcconfig = {
+  'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64 armv7 arm64',
+  'VALID_ARCHS' => 'x86_64 armv7 arm64',
+  }
+  s.user_target_xcconfig = {
+  'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64 armv7 arm64',
+  'VALID_ARCHS' => 'x86_64 armv7 arm64',
+  }
+  
   # s.resource_bundles = {
   #   'WebChatPod' => ['WebChatPod/Assets/*.png']
   # }

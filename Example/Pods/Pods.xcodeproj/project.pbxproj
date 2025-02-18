@@ -99,7 +99,6 @@
 		E83DB7C32D64822800B90CEE /* fish-sharp.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB3D02D64822700B90CEE /* fish-sharp.svg */; };
 		E83DB7C42D64822800B90CEE /* code-slash-sharp.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB3342D64822700B90CEE /* code-slash-sharp.svg */; };
 		E83DB7C52D64822800B90CEE /* arrow-up-right-box.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB2082D64822700B90CEE /* arrow-up-right-box.svg */; };
-		E83DB7C62D64822800B90CEE /* shapes.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB6352D64822700B90CEE /* shapes.svg */; };
 		E83DB7C72D64822800B90CEE /* snow-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB6512D64822700B90CEE /* snow-outline.svg */; };
 		E83DB7C82D64822800B90CEE /* people-circle.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB5672D64822700B90CEE /* people-circle.svg */; };
 		E83DB7C92D64822800B90CEE /* document-sharp.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB3762D64822700B90CEE /* document-sharp.svg */; };
@@ -232,7 +231,6 @@
 		E83DB8482D64822800B90CEE /* git-network.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB40A2D64822700B90CEE /* git-network.svg */; };
 		E83DB8492D64822800B90CEE /* star-sharp.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB6612D64822700B90CEE /* star-sharp.svg */; };
 		E83DB84A2D64822800B90CEE /* reload-circle-sharp.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB5E42D64822700B90CEE /* reload-circle-sharp.svg */; };
-		E83DB84B2D64822800B90CEE /* reload.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB5E12D64822700B90CEE /* reload.svg */; };
 		E83DB84C2D64822800B90CEE /* trophy-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB6C92D64822700B90CEE /* trophy-outline.svg */; };
 		E83DB84D2D64822800B90CEE /* eva_chatboticon.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB1A32D64822700B90CEE /* eva_chatboticon.svg */; };
 		E83DB84E2D64822800B90CEE /* arrow-redo-sharp.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB1F92D64822700B90CEE /* arrow-redo-sharp.svg */; };
@@ -330,7 +328,6 @@
 		E83DB8AA2D64822800B90CEE /* hourglass.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB4492D64822700B90CEE /* hourglass.svg */; };
 		E83DB8AB2D64822800B90CEE /* arrow-up-circle.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB2012D64822700B90CEE /* arrow-up-circle.svg */; };
 		E83DB8AC2D64822800B90CEE /* star-half-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB65E2D64822700B90CEE /* star-half-outline.svg */; };
-		E83DB8AD2D64822800B90CEE /* camera.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB29F2D64822700B90CEE /* camera.svg */; };
 		E83DB8AE2D64822800B90CEE /* code-download-sharp.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB32F2D64822700B90CEE /* code-download-sharp.svg */; };
 		E83DB8AF2D64822800B90CEE /* search-circle.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB6272D64822700B90CEE /* search-circle.svg */; };
 		E83DB8B02D64822800B90CEE /* musical-notes.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB5302D64822700B90CEE /* musical-notes.svg */; };
@@ -1089,7 +1086,6 @@
 		E83DBBA12D64822800B90CEE /* musical-note-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB52E2D64822700B90CEE /* musical-note-outline.svg */; };
 		E83DBBA22D64822800B90CEE /* subway-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB6722D64822700B90CEE /* subway-outline.svg */; };
 		E83DBBA32D64822800B90CEE /* utility-handler.js in Resources */ = {isa = PBXBuildFile; fileRef = E83DB1992D64822700B90CEE /* utility-handler.js */; };
-		E83DBBA42D64822800B90CEE /* settings.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB6322D64822700B90CEE /* settings.svg */; };
 		E83DBBA52D64822800B90CEE /* sad-sharp.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB6162D64822700B90CEE /* sad-sharp.svg */; };
 		E83DBBA62D64822800B90CEE /* egg.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB38C2D64822700B90CEE /* egg.svg */; };
 		E83DBBA72D64822800B90CEE /* exit.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB3A12D64822700B90CEE /* exit.svg */; };
@@ -1119,7 +1115,6 @@
 		E83DBBBF2D64822800B90CEE /* american-football.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB1CD2D64822700B90CEE /* american-football.svg */; };
 		E83DBBC02D64822800B90CEE /* 981.9f757ce68ec45e78.js in Resources */ = {isa = PBXBuildFile; fileRef = E83DB7082D64822700B90CEE /* 981.9f757ce68ec45e78.js */; };
 		E83DBBC12D64822800B90CEE /* binoculars-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB25B2D64822700B90CEE /* binoculars-outline.svg */; };
-		E83DBBC22D64822800B90CEE /* close.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB30E2D64822700B90CEE /* close.svg */; };
 		E83DBBC32D64822800B90CEE /* bonfire-sharp.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB2682D64822700B90CEE /* bonfire-sharp.svg */; };
 		E83DBBC42D64822800B90CEE /* car-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB2A62D64822700B90CEE /* car-outline.svg */; };
 		E83DBBC52D64822800B90CEE /* file-tray-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB3BD2D64822700B90CEE /* file-tray-outline.svg */; };
@@ -1132,7 +1127,6 @@
 		E83DBBCC2D64822800B90CEE /* chevron-forward-circle-sharp.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB3022D64822700B90CEE /* chevron-forward-circle-sharp.svg */; };
 		E83DBBCD2D64822800B90CEE /* key.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB4672D64822700B90CEE /* key.svg */; };
 		E83DBBCE2D64822800B90CEE /* volume-mute-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB6E42D64822700B90CEE /* volume-mute-outline.svg */; };
-		E83DBBCF2D64822800B90CEE /* language.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB46D2D64822700B90CEE /* language.svg */; };
 		E83DBBD02D64822800B90CEE /* play-circle-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB5952D64822700B90CEE /* play-circle-outline.svg */; };
 		E83DBBD12D64822800B90CEE /* bus-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB2882D64822700B90CEE /* bus-outline.svg */; };
 		E83DBBD22D64822800B90CEE /* shuffle-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB64B2D64822700B90CEE /* shuffle-outline.svg */; };
@@ -1826,7 +1820,6 @@
 		E83DB29C2D64822700B90CEE /* call.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = call.svg; sourceTree = "<group>"; };
 		E83DB29D2D64822700B90CEE /* call-outline.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "call-outline.svg"; sourceTree = "<group>"; };
 		E83DB29E2D64822700B90CEE /* call-sharp.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "call-sharp.svg"; sourceTree = "<group>"; };
-		E83DB29F2D64822700B90CEE /* camera.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = camera.svg; sourceTree = "<group>"; };
 		E83DB2A02D64822700B90CEE /* camera-outline.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "camera-outline.svg"; sourceTree = "<group>"; };
 		E83DB2A12D64822700B90CEE /* camera-reverse.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "camera-reverse.svg"; sourceTree = "<group>"; };
 		E83DB2A22D64822700B90CEE /* camera-reverse-outline.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "camera-reverse-outline.svg"; sourceTree = "<group>"; };
@@ -1937,7 +1930,6 @@
 		E83DB30B2D64822700B90CEE /* clipboard.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = clipboard.svg; sourceTree = "<group>"; };
 		E83DB30C2D64822700B90CEE /* clipboard-outline.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "clipboard-outline.svg"; sourceTree = "<group>"; };
 		E83DB30D2D64822700B90CEE /* clipboard-sharp.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "clipboard-sharp.svg"; sourceTree = "<group>"; };
-		E83DB30E2D64822700B90CEE /* close.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = close.svg; sourceTree = "<group>"; };
 		E83DB30F2D64822700B90CEE /* close-circle.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "close-circle.svg"; sourceTree = "<group>"; };
 		E83DB3102D64822700B90CEE /* close-circle-outline.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "close-circle-outline.svg"; sourceTree = "<group>"; };
 		E83DB3112D64822700B90CEE /* close-circle-sharp.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "close-circle-sharp.svg"; sourceTree = "<group>"; };
@@ -2288,7 +2280,6 @@
 		E83DB46A2D64822700B90CEE /* keypad.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = keypad.svg; sourceTree = "<group>"; };
 		E83DB46B2D64822700B90CEE /* keypad-outline.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "keypad-outline.svg"; sourceTree = "<group>"; };
 		E83DB46C2D64822700B90CEE /* keypad-sharp.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "keypad-sharp.svg"; sourceTree = "<group>"; };
-		E83DB46D2D64822700B90CEE /* language.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = language.svg; sourceTree = "<group>"; };
 		E83DB46E2D64822700B90CEE /* language-outline.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "language-outline.svg"; sourceTree = "<group>"; };
 		E83DB46F2D64822700B90CEE /* language-sharp.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "language-sharp.svg"; sourceTree = "<group>"; };
 		E83DB4702D64822700B90CEE /* laptop.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = laptop.svg; sourceTree = "<group>"; };
@@ -2660,7 +2651,6 @@
 		E83DB5DE2D64822700B90CEE /* refresh-circle-sharp.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "refresh-circle-sharp.svg"; sourceTree = "<group>"; };
 		E83DB5DF2D64822700B90CEE /* refresh-outline.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "refresh-outline.svg"; sourceTree = "<group>"; };
 		E83DB5E02D64822700B90CEE /* refresh-sharp.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "refresh-sharp.svg"; sourceTree = "<group>"; };
-		E83DB5E12D64822700B90CEE /* reload.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = reload.svg; sourceTree = "<group>"; };
 		E83DB5E22D64822700B90CEE /* reload-circle.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "reload-circle.svg"; sourceTree = "<group>"; };
 		E83DB5E32D64822700B90CEE /* reload-circle-outline.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "reload-circle-outline.svg"; sourceTree = "<group>"; };
 		E83DB5E42D64822700B90CEE /* reload-circle-sharp.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "reload-circle-sharp.svg"; sourceTree = "<group>"; };
@@ -2741,10 +2731,8 @@
 		E83DB62F2D64822700B90CEE /* server.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = server.svg; sourceTree = "<group>"; };
 		E83DB6302D64822700B90CEE /* server-outline.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "server-outline.svg"; sourceTree = "<group>"; };
 		E83DB6312D64822700B90CEE /* server-sharp.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "server-sharp.svg"; sourceTree = "<group>"; };
-		E83DB6322D64822700B90CEE /* settings.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = settings.svg; sourceTree = "<group>"; };
 		E83DB6332D64822700B90CEE /* settings-outline.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "settings-outline.svg"; sourceTree = "<group>"; };
 		E83DB6342D64822700B90CEE /* settings-sharp.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "settings-sharp.svg"; sourceTree = "<group>"; };
-		E83DB6352D64822700B90CEE /* shapes.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = shapes.svg; sourceTree = "<group>"; };
 		E83DB6362D64822700B90CEE /* shapes-outline.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "shapes-outline.svg"; sourceTree = "<group>"; };
 		E83DB6372D64822700B90CEE /* shapes-sharp.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "shapes-sharp.svg"; sourceTree = "<group>"; };
 		E83DB6382D64822700B90CEE /* share.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = share.svg; sourceTree = "<group>"; };
@@ -3566,7 +3554,6 @@
 				E83DB29C2D64822700B90CEE /* call.svg */,
 				E83DB29D2D64822700B90CEE /* call-outline.svg */,
 				E83DB29E2D64822700B90CEE /* call-sharp.svg */,
-				E83DB29F2D64822700B90CEE /* camera.svg */,
 				E83DB2A02D64822700B90CEE /* camera-outline.svg */,
 				E83DB2A12D64822700B90CEE /* camera-reverse.svg */,
 				E83DB2A22D64822700B90CEE /* camera-reverse-outline.svg */,
@@ -3677,7 +3664,6 @@
 				E83DB30B2D64822700B90CEE /* clipboard.svg */,
 				E83DB30C2D64822700B90CEE /* clipboard-outline.svg */,
 				E83DB30D2D64822700B90CEE /* clipboard-sharp.svg */,
-				E83DB30E2D64822700B90CEE /* close.svg */,
 				E83DB30F2D64822700B90CEE /* close-circle.svg */,
 				E83DB3102D64822700B90CEE /* close-circle-outline.svg */,
 				E83DB3112D64822700B90CEE /* close-circle-sharp.svg */,
@@ -4028,7 +4014,6 @@
 				E83DB46A2D64822700B90CEE /* keypad.svg */,
 				E83DB46B2D64822700B90CEE /* keypad-outline.svg */,
 				E83DB46C2D64822700B90CEE /* keypad-sharp.svg */,
-				E83DB46D2D64822700B90CEE /* language.svg */,
 				E83DB46E2D64822700B90CEE /* language-outline.svg */,
 				E83DB46F2D64822700B90CEE /* language-sharp.svg */,
 				E83DB4702D64822700B90CEE /* laptop.svg */,
@@ -4400,7 +4385,6 @@
 				E83DB5DE2D64822700B90CEE /* refresh-circle-sharp.svg */,
 				E83DB5DF2D64822700B90CEE /* refresh-outline.svg */,
 				E83DB5E02D64822700B90CEE /* refresh-sharp.svg */,
-				E83DB5E12D64822700B90CEE /* reload.svg */,
 				E83DB5E22D64822700B90CEE /* reload-circle.svg */,
 				E83DB5E32D64822700B90CEE /* reload-circle-outline.svg */,
 				E83DB5E42D64822700B90CEE /* reload-circle-sharp.svg */,
@@ -4481,10 +4465,8 @@
 				E83DB62F2D64822700B90CEE /* server.svg */,
 				E83DB6302D64822700B90CEE /* server-outline.svg */,
 				E83DB6312D64822700B90CEE /* server-sharp.svg */,
-				E83DB6322D64822700B90CEE /* settings.svg */,
 				E83DB6332D64822700B90CEE /* settings-outline.svg */,
 				E83DB6342D64822700B90CEE /* settings-sharp.svg */,
-				E83DB6352D64822700B90CEE /* shapes.svg */,
 				E83DB6362D64822700B90CEE /* shapes-outline.svg */,
 				E83DB6372D64822700B90CEE /* shapes-sharp.svg */,
 				E83DB6382D64822700B90CEE /* share.svg */,
@@ -5027,7 +5009,6 @@
 				E83DB7C32D64822800B90CEE /* fish-sharp.svg in Resources */,
 				E83DB7C42D64822800B90CEE /* code-slash-sharp.svg in Resources */,
 				E83DB7C52D64822800B90CEE /* arrow-up-right-box.svg in Resources */,
-				E83DB7C62D64822800B90CEE /* shapes.svg in Resources */,
 				E83DB7C72D64822800B90CEE /* snow-outline.svg in Resources */,
 				E83DB7C82D64822800B90CEE /* people-circle.svg in Resources */,
 				E83DB7C92D64822800B90CEE /* document-sharp.svg in Resources */,
@@ -5160,7 +5141,6 @@
 				E83DB8482D64822800B90CEE /* git-network.svg in Resources */,
 				E83DB8492D64822800B90CEE /* star-sharp.svg in Resources */,
 				E83DB84A2D64822800B90CEE /* reload-circle-sharp.svg in Resources */,
-				E83DB84B2D64822800B90CEE /* reload.svg in Resources */,
 				E83DB84C2D64822800B90CEE /* trophy-outline.svg in Resources */,
 				E83DB84D2D64822800B90CEE /* eva_chatboticon.svg in Resources */,
 				E83DB84E2D64822800B90CEE /* arrow-redo-sharp.svg in Resources */,
@@ -5258,7 +5238,6 @@
 				E83DB8AA2D64822800B90CEE /* hourglass.svg in Resources */,
 				E83DB8AB2D64822800B90CEE /* arrow-up-circle.svg in Resources */,
 				E83DB8AC2D64822800B90CEE /* star-half-outline.svg in Resources */,
-				E83DB8AD2D64822800B90CEE /* camera.svg in Resources */,
 				E83DB8AE2D64822800B90CEE /* code-download-sharp.svg in Resources */,
 				E83DB8AF2D64822800B90CEE /* search-circle.svg in Resources */,
 				E83DB8B02D64822800B90CEE /* musical-notes.svg in Resources */,
@@ -6017,7 +5996,6 @@
 				E83DBBA12D64822800B90CEE /* musical-note-outline.svg in Resources */,
 				E83DBBA22D64822800B90CEE /* subway-outline.svg in Resources */,
 				E83DBBA32D64822800B90CEE /* utility-handler.js in Resources */,
-				E83DBBA42D64822800B90CEE /* settings.svg in Resources */,
 				E83DBBA52D64822800B90CEE /* sad-sharp.svg in Resources */,
 				E83DBBA62D64822800B90CEE /* egg.svg in Resources */,
 				E83DBBA72D64822800B90CEE /* exit.svg in Resources */,
@@ -6047,7 +6025,6 @@
 				E83DBBBF2D64822800B90CEE /* american-football.svg in Resources */,
 				E83DBBC02D64822800B90CEE /* 981.9f757ce68ec45e78.js in Resources */,
 				E83DBBC12D64822800B90CEE /* binoculars-outline.svg in Resources */,
-				E83DBBC22D64822800B90CEE /* close.svg in Resources */,
 				E83DBBC32D64822800B90CEE /* bonfire-sharp.svg in Resources */,
 				E83DBBC42D64822800B90CEE /* car-outline.svg in Resources */,
 				E83DBBC52D64822800B90CEE /* file-tray-outline.svg in Resources */,
@@ -6060,7 +6037,6 @@
 				E83DBBCC2D64822800B90CEE /* chevron-forward-circle-sharp.svg in Resources */,
 				E83DBBCD2D64822800B90CEE /* key.svg in Resources */,
 				E83DBBCE2D64822800B90CEE /* volume-mute-outline.svg in Resources */,
-				E83DBBCF2D64822800B90CEE /* language.svg in Resources */,
 				E83DBBD02D64822800B90CEE /* play-circle-outline.svg in Resources */,
 				E83DBBD12D64822800B90CEE /* bus-outline.svg in Resources */,
 				E83DBBD22D64822800B90CEE /* shuffle-outline.svg in Resources */,
@@ -6678,16 +6654,17 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Target Support Files/WebChatPod/WebChatPod-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/WebChatPod/WebChatPod.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = com.openstream.cocoapods.WebChatPod;
 				PRODUCT_MODULE_NAME = WebChatPod;
 				PRODUCT_NAME = WebChatPod;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -6713,16 +6690,17 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Target Support Files/WebChatPod/WebChatPod-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/WebChatPod/WebChatPod.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = com.openstream.cocoapods.WebChatPod;
 				PRODUCT_MODULE_NAME = WebChatPod;
 				PRODUCT_NAME = WebChatPod;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";

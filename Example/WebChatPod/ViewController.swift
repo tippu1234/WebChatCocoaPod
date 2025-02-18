@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebChatPod
 
 class ViewController: UIViewController {
 

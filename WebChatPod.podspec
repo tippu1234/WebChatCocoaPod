@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/tippu1234/WebChatPod'
+  s.homepage         = 'https://github.com/tippu1234/WebChatCocoaPod.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'tippu1234' => 'tippu.openstream@gmail.com' }
-  s.source           = { :git => 'https://github.com/tippu1234/WebChatPod.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/tippu1234/WebChatCocoaPod.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '12.0'

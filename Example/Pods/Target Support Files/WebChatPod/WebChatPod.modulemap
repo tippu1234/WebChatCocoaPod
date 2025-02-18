@@ -1,0 +1,6 @@
+framework module WebChatPod {
+  umbrella header "WebChatPod-umbrella.h"
+
+  export *
+  module * { export * }
+}

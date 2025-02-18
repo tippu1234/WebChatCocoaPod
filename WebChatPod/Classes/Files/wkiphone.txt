@@ -1,0 +1,32 @@
+/*
+ * iphone.js
+ *
+ * created 06/24/2014
+ */
+ 
+(function() {
+
+if(window._evabotview) {
+    return;
+}
+
+window._evabotview = {};
+
+var raiseCuemeEvent = function(name, value, data, eventSrc) {
+    var cuemeevtdata = {
+        name: name
+    }
+    window.webkit.messageHandlers.evabotwebview.postMessage(cuemeevtdata);
+};
+
+window.evabot_takePicture = function() {
+    console.log('takePicture called');
+    raiseCuemeEvent("takePicture", null, null, null);
+};
+
+window.evabot_closeView = function() {
+    console.log('closeView called');
+    raiseCuemeEvent("closeView", null, null, null);
+};
+
+})();

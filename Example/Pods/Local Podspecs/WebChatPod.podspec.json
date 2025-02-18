@@ -1,0 +1,22 @@
+{
+  "name": "WebChatPod",
+  "version": "0.1.0",
+  "summary": "A short description of WebChatPod.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/tippu1234/WebChatPod",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "tippu1234": "tippu.openstream@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/tippu1234/WebChatPod.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "WebChatPod/Classes/**/*"
+}

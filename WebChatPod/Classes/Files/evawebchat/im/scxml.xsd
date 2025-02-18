@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.openstream.com/scxml"
+	xmlns:tns="http://www.openstream.com/scxml" elementFormDefault="qualified">
+
+	<simpleType name="ComponentType">
+		<annotation>
+			<documentation>
+				This type represents all components that are available to
+				be used in scxml.
+			</documentation>
+		</annotation>
+		<restriction base="string">
+			<enumeration value="x-html"></enumeration>
+			<enumeration value="x-voice"></enumeration>
+			<enumeration value="x-toolbar"></enumeration>
+			<enumeration value="x-barcode"></enumeration>
+			<enumeration value="x-ink"></enumeration>
+			<enumeration value="x-sign"></enumeration>
+			<enumeration value="x-camera"></enumeration>
+			<enumeration value="x-db"></enumeration>
+			<enumeration value="x-docmanager"></enumeration>
+			<enumeration value="x-docviewer"></enumeration>
+			<enumeration value="x-gesture"></enumeration>
+			<enumeration value="x-http"></enumeration>
+			<enumeration value="x-launchapp"></enumeration>
+			<enumeration value="x-loc"></enumeration>
+			<enumeration value="x-record"></enumeration>
+			<enumeration value="x-securid"></enumeration>
+			<enumeration value="x-upload"></enumeration>
+			<enumeration value="x-mail"></enumeration>
+			<enumeration value="x-notification"></enumeration>
+			<enumeration value="x-micr"></enumeration>
+			<enumeration value="xe-csrvoice"></enumeration>
+			<enumeration value="x-deviceBiometrics"></enumeration>
+			<enumeration value="x-container"></enumeration>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="SendEventType">
+		<annotation>
+			<documentation>
+				This type represents all the events that can be sent
+				to the components. These events will only be used along with SEND
+				element in to attribute.
+			</documentation>
+		</annotation>
+		<restriction base="string">
+			<enumeration value="loadUrl"></enumeration>
+			<enumeration value="cancelLoad"></enumeration>
+			<enumeration value="showDocument"></enumeration>
+			<enumeration value="showGesturePad"></enumeration>
+			<enumeration value="hideGesturePad"></enumeration>
+			<enumeration value="scan"></enumeration>
+			<enumeration value="startPictureCapture"></enumeration>
+			<enumeration value="startVideoCapture"></enumeration>
+			<enumeration value="startScreenCapture"></enumeration>
+			<enumeration value="connect"></enumeration>
+			<enumeration value="disconnect"></enumeration>
+			<enumeration value="setQueryXML"></enumeration>
+			<enumeration value="execute"></enumeration>
+			<enumeration value="execute"></enumeration>
+			<enumeration value="click"></enumeration>
+			<enumeration value="base"></enumeration>
+			<enumeration value="startTransaction"></enumeration>
+			<enumeration value="rollback"></enumeration>
+			<enumeration value="lock"></enumeration>
+			<enumeration value="setContext"></enumeration>
+			<enumeration value="download"></enumeration>
+			<enumeration value="delete"></enumeration>
+			<enumeration value="mail"></enumeration>
+			<enumeration value="cancelDownload"></enumeration>
+			<enumeration value="getDocumentList"></enumeration>
+			<enumeration value="isDocumentPresent"></enumeration>
+			<enumeration value="getDocumentUrl"></enumeration>
+			<enumeration value="get"></enumeration>
+			<enumeration value="post"></enumeration>
+			<enumeration value="useSimpleResponseMode"></enumeration>
+			<enumeration value="addHeader"></enumeration>
+			<enumeration value="clearHeaders"></enumeration>
+			<enumeration value="setProxy"></enumeration>
+			<enumeration value="setProxyPort"></enumeration>
+			<enumeration value="timeout"></enumeration>
+			<enumeration value="setEncoding"></enumeration>
+			<enumeration value="prepare"></enumeration>
+			<enumeration value="unPrepare"></enumeration>
+			<enumeration value="setContext"></enumeration>
+			<enumeration value="start"></enumeration>
+			<enumeration value="chooseFile"></enumeration>
+			<enumeration value="saveInk"></enumeration>
+			<enumeration value="playInk"></enumeration>
+			<enumeration value="setBackgroundImageFile"></enumeration>
+			<enumeration value="setBackgroundImageData"></enumeration>
+			<enumeration value="captureImage"></enumeration>
+			<enumeration value="useOnlineMode"></enumeration>
+			<enumeration value="useOfflineMode"></enumeration>
+			<enumeration value="launch"></enumeration>
+			<enumeration value="enableLocationTracking"></enumeration>
+			<enumeration value="disableLocationTracking"></enumeration>
+			<enumeration value="enableLocationReporting"></enumeration>
+			<enumeration value="disableLocationReporting"></enumeration>
+			<enumeration value="getCurrentLocation"></enumeration>
+			<enumeration value="getCurrentStatus"></enumeration>
+			<enumeration value="setContext"></enumeration>
+			<enumeration value="start"></enumeration>
+			<enumeration value="chooseFile"></enumeration>
+			<enumeration value="setCtKipUrl"></enumeration>
+			<enumeration value="setCtKipAuthCode"></enumeration>
+			<enumeration value="importCtKipToken"></enumeration>
+			<enumeration value="deleteToken"></enumeration>
+			<enumeration value="getIsTokenProvisioned"></enumeration>
+			<enumeration value="getTokenSerialNumber"></enumeration>
+			<enumeration value="getCurrentOtp"></enumeration>
+			<enumeration value="getNextOtp"></enumeration>
+			<enumeration value="setCanvasSize"></enumeration>
+			<enumeration value="captureSignature"></enumeration>
+			<enumeration value="captureSignatureImage"></enumeration>
+			<enumeration value="setURL"></enumeration>
+			<enumeration value="setContent"></enumeration>
+			<enumeration value="showToolbar"></enumeration>
+			<enumeration value="hideToolbar"></enumeration>
+			<enumeration value="upload"></enumeration>
+			<enumeration value="didRegisterSuccess"></enumeration>
+			<enumeration value="didRegisterFail"></enumeration>
+			<enumeration value="registerKey"></enumeration>
+			<enumeration value="registerFile"></enumeration>
+			<enumeration value="didUploadSuccess"></enumeration>
+			<enumeration value="didUploadFail"></enumeration>
+			<enumeration value="prepare"></enumeration>
+			<enumeration value="unPrepare"></enumeration>
+			<enumeration value="addGrammar"></enumeration>
+			<enumeration value="addGrammars"></enumeration>
+			<enumeration value="removeGrammar"></enumeration>
+			<enumeration value="removeGrammars"></enumeration>
+			<enumeration value="removeAllGrammarsstartRecognize"></enumeration>
+			<enumeration value="startSynthesize"></enumeration>
+			<enumeration value="topRecognize"></enumeration>
+			<enumeration value="stopSynthesize"></enumeration>
+			<enumeration value="playUrl"></enumeration>
+			<enumeration value="playText"></enumeration>
+			<enumeration value="cancel"></enumeration>
+			<enumeration value="keepAlive"></enumeration>
+			<enumeration value="prepareRecognizer"></enumeration>
+			<enumeration value="useLocalRecognizer"></enumeration>
+			<enumeration value="useRemoteRecognizer"></enumeration>
+			<enumeration value="useBothRecognizer"></enumeration>
+			<enumeration value="prepareSynthesizer"></enumeration>
+			<enumeration value="useSynthesizer"></enumeration>
+			<enumeration value="setField"></enumeration>
+			<enumeration value="getField"></enumeration>
+			<enumeration value="getDeviceParam"></enumeration>
+			<enumeration value="addHelp"></enumeration>
+			<enumeration value="removeHelp"></enumeration>
+			<enumeration value="showWorkbench"></enumeration>
+			<enumeration value="logoutWorkbench"></enumeration>
+			<enumeration value="useJsonResponseMode"></enumeration>
+			<enumeration value="setHeaders"></enumeration>
+			<enumeration value="processRequests"></enumeration>
+			<enumeration value="sendMailTo"></enumeration>
+			<enumeration value="sendMailSubject"></enumeration>
+			<enumeration value="sendMailBody"></enumeration>
+			<enumeration value="composeMail"></enumeration>
+			<enumeration value="commit"></enumeration>
+			<enumeration value="addAttachment"></enumeration>
+			<enumeration value="addAttachmentPath"></enumeration>
+			<enumeration value="attachmentMimeType"></enumeration>
+			<enumeration value="stopRecognize"></enumeration>
+			<enumeration value="startRecognize"></enumeration>
+			<enumeration value="processRequest"></enumeration>
+			<enumeration value="showCurtain"></enumeration>
+			<enumeration value="hideCurtain"></enumeration>
+			<enumeration value="log"></enumeration>
+			<enumeration value="getDevicePhoneNumber"></enumeration>
+			<enumeration value="getDeviceID"></enumeration>
+			<enumeration value="getCuemeInfo"></enumeration>
+			<enumeration value="launchScan"></enumeration>
+			<enumeration value="enableBarcodeScan"></enumeration>
+			<enumeration value="setOrientation"></enumeration>
+			<enumeration value="baseUrl"></enumeration>
+			<enumeration value="startScreenShot"></enumeration>
+			<enumeration value="startNotesCapture"></enumeration>
+			<enumeration value="enable"></enumeration>			
+			<enumeration value="setup"></enumeration>
+			<enumeration value="stop"></enumeration>
+			<enumeration value="pausePlay"></enumeration>
+			<enumeration value="resumePlay"></enumeration>
+			<enumeration value="getSupportedBiometrics"></enumeration>
+			<enumeration value="setConfig"></enumeration>
+			<enumeration value="deleteAll"></enumeration>
+			<enumeration value="save"></enumeration>
+			<enumeration value="read"></enumeration>
+			<enumeration value="isKeySaved"></enumeration>
+			<enumeration value="stopSplash"></enumeration>
+			
+		</restriction>
+	</simpleType>
+
+	<simpleType name="RaisedEventType">
+		<annotation>
+			<documentation>
+				This type represents the events raised by the
+				components. These values are used only in GO element for ON
+				attribute.
+			</documentation>
+		</annotation>
+		<restriction base="string">
+			<enumeration value="noMatch"></enumeration>
+			<enumeration value="failed"></enumeration>
+			<enumeration value="cancelled"></enumeration>
+			<enumeration value="barcode"></enumeration>
+			<enumeration value="barcodeScanFail"></enumeration>
+			<enumeration value="scan"></enumeration>
+			<enumeration value="onPictureCaptureComplete"></enumeration>
+			<enumeration value="onVideoCaptureComplete"></enumeration>
+			<enumeration value="onScreenCaptureComplete"></enumeration>
+			<enumeration value="onPictureCaptureFail"></enumeration>
+			<enumeration value="onVideoCaptureFail"></enumeration>
+			<enumeration value="onScreenCaptureFail"></enumeration>
+			<enumeration value="ImageFile"></enumeration>
+			<enumeration value="VideoFile"></enumeration>
+			<enumeration value="ImageData"></enumeration>
+			<enumeration value="VideoData"></enumeration>
+			<enumeration value="results"></enumeration>
+			<enumeration value="connectSuccess"></enumeration>
+			<enumeration value="connectError"></enumeration>
+			<enumeration value="querySuccess"></enumeration>
+			<enumeration value="queryError"></enumeration>
+			<enumeration value="setQueryXMLSuccess"></enumeration>
+			<enumeration value="setQueryXMLFail"></enumeration>
+			<enumeration value="error"></enumeration>
+			<enumeration value="downloading"></enumeration>
+			<enumeration value="downloadComplete"></enumeration>
+			<enumeration value="downloadFailed"></enumeration>
+			<enumeration value="downloadCancelled"></enumeration>
+			<enumeration value="deleteSuccess"></enumeration>
+			<enumeration value="deleteFailed"></enumeration>
+			<enumeration value="documentList"></enumeration>
+			<enumeration value="isDocumentPresentResponse"></enumeration>
+			<enumeration value="documentUrl"></enumeration>
+			<enumeration value="error"></enumeration>
+			<enumeration value="showSuccess"></enumeration>
+			<enumeration value="loadCanceled"></enumeration>
+			<enumeration value="recordReady"></enumeration>
+			<enumeration value="recordingComplete"></enumeration>
+			<enumeration value="click"></enumeration>
+			<enumeration value="getCuemeInfoResponse"></enumeration>
+			<enumeration value="getDevicePhoneNumberResponse"></enumeration>
+			<enumeration value="getDeviceIDResponse"></enumeration>
+			<enumeration value="textInput"></enumeration>
+			<enumeration value="recording"></enumeration>
+			<enumeration value="pttPressed"></enumeration>
+			<enumeration value="processing"></enumeration>
+			<enumeration value="pttReleased"></enumeration>
+			<enumeration value="processingComplete"></enumeration>
+			<enumeration value="fetchResponse"></enumeration>
+			<enumeration value="timeout"></enumeration>
+			<enumeration value="fetchTimedOut"></enumeration>
+			<enumeration value="fetchFail"></enumeration>
+			<enumeration value="fetchResponseAsJson"></enumeration>
+			<enumeration value="fetchErrorAsJson"></enumeration>
+			<enumeration value="editComplete"></enumeration>
+			<enumeration value="playAudio"></enumeration>
+			<enumeration value="saveInk"></enumeration>
+			<enumeration value="inkDataID"></enumeration>
+			<enumeration value="inkData"></enumeration>
+			<enumeration value="saveComplete"></enumeration>
+			<enumeration value="screenshotImageData"></enumeration>
+			<enumeration value="didLaunchSuccess"></enumeration>
+			<enumeration value="didLaunchFail"></enumeration>
+			<enumeration value="currentLocation"></enumeration>
+			<enumeration value="currentStatus"></enumeration>
+			<enumeration value="serviceNotAvailable"></enumeration>
+			<enumeration value="recordedAudio"></enumeration>
+			<enumeration value="dataID"></enumeration>
+			<enumeration value="importCtKipTokenSuccessful"></enumeration>
+			<enumeration value="importCtKipTokenFailed"></enumeration>
+			<enumeration value="deleteTokenSuccessful"></enumeration>
+			<enumeration value="deleteTokenFailed"></enumeration>
+			<enumeration value="isTokenProvisioned"></enumeration>
+			<enumeration value="tokenSerialNumber"></enumeration>
+			<enumeration value="currentOtp"></enumeration>
+			<enumeration value="nextOtp"></enumeration>
+			<enumeration value="error"></enumeration>
+			<enumeration value="setSignature"></enumeration>
+			<enumeration value="setSignatureImage"></enumeration>
+			<enumeration value="didRegisterSuccess"></enumeration>
+			<enumeration value="didRegisterFail"></enumeration>
+			<enumeration value="didUploadSuccess"></enumeration>
+			<enumeration value="didUploadFail"></enumeration>
+			<enumeration value="initialized"></enumeration>
+			<enumeration value="ready"></enumeration>
+			<enumeration value="voiceResult"></enumeration>
+			<enumeration value="recording"></enumeration>
+			<enumeration value="recordingComplete"></enumeration>
+			<enumeration value="recognizing"></enumeration>
+			<enumeration value="synthesizing"></enumeration>
+			<enumeration value="playStarted"></enumeration>
+			<enumeration value="playCompleted"></enumeration>
+			<enumeration value="playAborted"></enumeration>
+			<enumeration value="help"></enumeration>
+			<enumeration value="nomatch"></enumeration>
+			<enumeration value="noinput"></enumeration>
+			<enumeration value="addGrammarDone"></enumeration>
+			<enumeration value="addGrammarFail"></enumeration>
+			<enumeration value="removeGrammarDone"></enumeration>
+			<enumeration value="removeGrammarFail"></enumeration>
+			<enumeration value="removeAllGrammarsDone"></enumeration>
+			<enumeration value="removeAllGrammarsFail"></enumeration>
+			<enumeration value="processing"></enumeration>
+			<enumeration value="processingComplete"></enumeration>
+			<enumeration value="voiceResultsComplete"></enumeration>
+			<enumeration value="executeResponse"></enumeration>
+			<enumeration value="getFieldResponse"></enumeration>
+			<enumeration value="URLChanging"></enumeration>
+			<enumeration value="getDeviceParamResponse"></enumeration>
+			<enumeration value="fetchError"></enumeration>
+			<enumeration value="fetchResponseAsJSON"></enumeration>
+			<enumeration value="fetchErrorAsJSON"></enumeration>
+			<enumeration value="sendMailSuccess"></enumeration>
+			<enumeration value="sendMailFailure"></enumeration>
+			<enumeration value="remoteNotification"></enumeration>
+			<enumeration value="processQueryResult"></enumeration>
+			<enumeration value="processQueryError"></enumeration>
+			<enumeration value="batchRequestStarted"></enumeration>
+			<enumeration value="batchRequestComplete"></enumeration>
+			<enumeration value="scanResult"></enumeration>
+			<enumeration value="barcodeScanComplete"></enumeration>
+			<enumeration value="readText"></enumeration>
+			<enumeration value="startReading"></enumeration>
+			<enumeration value="stopReading"></enumeration>
+			<enumeration value="willSpeakTextAtIndex"></enumeration>
+			<enumeration value="barcodeScanComplete"></enumeration>			
+			<enumeration value="setupSuccess"></enumeration>
+			<enumeration value="setupFail"></enumeration>
+			<enumeration value="startSuccess"></enumeration>
+			<enumeration value="startFail"></enumeration>
+			<enumeration value="stopSuccess"></enumeration>
+			<enumeration value="stopFail"></enumeration>
+			<enumeration value="partialSpeechResult"></enumeration>
+			<enumeration value="finalSpeechResult"></enumeration>
+			<enumeration value="speechError"></enumeration>
+			<enumeration value="playPaused"></enumeration>
+			<enumeration value="playResumed"></enumeration>
+			<enumeration value="getSupportedBiometricsResponse"></enumeration>
+			<enumeration value="deleteAllSuccess"></enumeration>
+			<enumeration value="deleteAllFail"></enumeration>
+			<enumeration value="deleteFail"></enumeration>
+			<enumeration value="saveSuccess"></enumeration>
+			<enumeration value="saveFail"></enumeration>
+			<enumeration value="readSuccess"></enumeration>
+			<enumeration value="readFail"></enumeration>
+			<enumeration value="isKeySavedResponse"></enumeration>
+		</restriction>
+	</simpleType>
+
+	<complexType name="DataType">
+		<annotation>
+			<documentation>This type represents the data definition of a
+				variable.
+    		</documentation>
+		</annotation>
+		<attribute name="id" type="tns:VariableNameType">
+			<annotation>
+				<documentation>
+					Name of the data variable. This name should be of
+					Alpha numeric type starting with an alphabet.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="expr" type="string">
+			<annotation>
+				<documentation>
+					This holds an ECMA expression. This is the initial
+					value of this variable. The result of this expression is assigned
+					to the variable.
+				</documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+
+	<simpleType name="VariableNameType">
+			<annotation>
+				<documentation>
+					This type defines a variable name.
+				</documentation>
+			</annotation>
+		<restriction base="string">
+			<pattern value=".+"></pattern>
+		</restriction>
+	</simpleType>
+
+	<complexType name="SendType">
+		<annotation>
+			<documentation>
+				This element represents the SEND element of scxml.
+				This element is used to send events to the components.
+			</documentation>
+		</annotation>
+		<attribute name="event" type="tns:SendEventType" use="required">
+			<annotation>
+				<documentation>
+					This holds the nameof the event that should be sent
+					to the component.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="to" type="tns:ComponentType" use="required">
+			<annotation>
+				<documentation>
+					This holds the name of the component to which this
+					event shoulb be sent.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="data" type="string">
+			<annotation>
+				<documentation>
+					This holds the simple string data that should be
+					included in the event value.
+					Only one of data, expr or url attributes should be present.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="expr" type="string">
+			<annotation>
+				<documentation>
+					This holds the ECMA expression, result of which
+					should be included as event value.
+					Only one of data, expr or url attributes should be present.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="target" type="tns:VariableNameType">
+			<annotation>
+				<documentation>
+					This holds the target value. The target should be used if there
+					is a response expected because of this event. In the response
+					event the same target value will be provided.
+					
+					Please look at the detailed documentation for each of the specific
+					events on how to use this value. 
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="url" type="anyURI">
+			<annotation>
+				<documentation>
+					This holds the URL if the event value is an URL. 
+					Only one of data, expr or url attributes should be present.
+				</documentation>
+			</annotation>		
+		</attribute>
+		<attribute name="secure" type="anyURI">
+			<annotation>
+				<documentation>
+					
+				</documentation>
+			</annotation>		
+		</attribute>
+	</complexType>
+
+	<complexType name="InitialFinalSectionType">
+		<annotation>
+			<documentation>
+				This type represents the initial and final segments fo scxml.
+				This will contain set of SEND elements.
+			</documentation>
+		</annotation>		
+		<sequence>
+			<element name="send" type="tns:SendType" maxOccurs="unbounded"
+				minOccurs="0">
+				<annotation>
+					<documentation>
+						These are the events that need to be sent before we go to the 
+						initial state. Normally these are the events that are sent to 
+						initialize the components if they are part of initial section
+						or events that are sent to clean and de-initialize the components
+						if they are part fo final section.
+					</documentation>
+				</annotation>						
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="DataModelType">
+		<annotation>
+			<documentation>
+				This type represents the DATAMODEL section of the
+				scxml. This contains definitions of data variables used in this
+				scxml.
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="data" type="tns:DataType" minOccurs="0"
+				maxOccurs="unbounded">
+				<annotation>
+					<documentation>
+						These are the data elements that are variable definitions.
+						As part of definition the variables can also be assigned 
+						a default value using expr attribute.
+					</documentation>
+				</annotation>		
+				</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="AssignType">
+		<annotation>
+			<documentation>
+				This type represents the ASSIGN tag in the scxml. It
+				takes a location (a variable defined in datamodel) and an expression
+				as attributes.
+			</documentation>
+		</annotation>
+		<attribute name="location" type="tns:DataLocationType" use="required">
+			<annotation>
+				<documentation>
+					This the variable name defined in the datamodel
+					section using data tag. The format of the value would be
+					_data.{variableName}.
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="expr" type="string" use="required">
+			<annotation>
+				<documentation>
+					This contains the ECMA expression. The result of the
+					this expression would be assigned to the location.
+				</documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+
+	<simpleType name="DataLocationType">
+		<annotation>
+			<documentation>
+				This type defines how a variable defined in the data model can be 
+				accessed in scxml.
+			</documentation>
+		</annotation>		
+		<restriction base="string">
+			<pattern value="_data.([a-z]|[A-Z])\w*"></pattern>
+		</restriction>
+	</simpleType>
+
+	<complexType name="IfElementType">
+		<annotation>
+			<documentation>
+				This type defines IF element. It can have SEND, ASSIGN, ELSE, ELSEIF and IF elements.
+				This can have one of node or expr attributes.
+				If node value is provided, then the equivalent condition evaluated would be "event.target==nodeValue".
+				If node is not provided, then expr should be provided. This would be ECMA expression. If this evaluates
+				to true the action in this handler are performed.
+			</documentation>
+		</annotation>		
+		<sequence>
+			<sequence minOccurs="0" maxOccurs="unbounded">
+				<choice minOccurs="0" maxOccurs="unbounded">
+					<element name="send" type="tns:SendType">
+						<annotation>
+							<documentation>
+								SEND elements of the IF section.
+							</documentation>
+						</annotation>		
+					</element>
+					<element name="assign" type="tns:AssignType">
+						<annotation>
+							<documentation>
+								ASSIGN elements of the IF section.
+							</documentation>
+						</annotation>		
+					</element>
+					<element name="if" type="tns:IfElementType">
+						<annotation>
+							<documentation>
+								This is nested IF element. It can have SEND, ASSIGN, ELSE, ELSEIF and IF elements.
+								This can have one of node or expr attributes.
+								If node value is provided, then the equivalent condition evaluated would be "event.target==nodeValue".
+								If node is not provided, then expr should be provided. This would be ECMA expression. If this evaluates
+								to true the action in this handler are performed.
+							</documentation>
+						</annotation>		
+					</element>
+				</choice>
+			</sequence>
+			<sequence>
+				<sequence minOccurs="0" maxOccurs="unbounded">
+					<element name="elseif" type="tns:ElseIfElementType">
+						<annotation>
+							<documentation>
+								This is ELSEIF element. It can have SEND, ASSIGN, IF elements.
+								This can have one of node or expr attributes.
+								If node value is provided, then the equivalent condition evaluated would be "event.target==nodeValue".
+								If node is not provided, then expr should be provided. This would be ECMA expression. If this evaluates
+								to true the action in this handler are performed.
+							</documentation>
+						</annotation>		
+					</element>
+					<choice minOccurs="0" maxOccurs="unbounded">
+						<element name="send" type="tns:SendType">
+							<annotation>
+								<documentation>
+									SEND element of the ELSEIF section.
+								</documentation>
+							</annotation>		
+						</element>
+						<element name="if" type="tns:IfElementType">
+							<annotation>
+								<documentation>
+									Nested IF element of the ELSEIF section.
+								</documentation>
+							</annotation>		
+						</element>
+						<element name="assign" type="tns:AssignType">
+							<annotation>
+								<documentation>
+									ASSIGN elements of the ELSEIF section.
+								</documentation>
+							</annotation>		
+						</element>
+					</choice>
+				</sequence>
+				<sequence minOccurs="0" maxOccurs="1">
+					<element name="else" type="tns:ElseElementType">
+							<annotation>
+								<documentation>
+									This is ELSE element. It can have SEND, ASSIGN, IF elements.
+								</documentation>
+							</annotation>		
+					</element>
+					<choice minOccurs="0" maxOccurs="unbounded">
+						<element name="send" type="tns:SendType">
+							<annotation>
+								<documentation>
+									SEND elements of the ELSE section.
+								</documentation>
+							</annotation>		
+						</element>
+						<element name="if" type="tns:IfElementType">
+							<annotation>
+								<documentation>
+									Nested IF element of the ELSE section.
+								</documentation>
+							</annotation>		
+						</element>
+						<element name="assign" type="tns:AssignType">
+							<annotation>
+								<documentation>
+									ASSIGN elements of the ELSE section.
+								</documentation>
+							</annotation>		
+						</element>
+					</choice>
+				</sequence>
+			</sequence>
+		</sequence>
+		<attribute name="node" type="tns:VariableNameType" use="optional">
+			<annotation>
+				<documentation>
+					If this attribute is present the equivalent condition evaluated would be "event.target==nodeValue". 
+				</documentation>
+			</annotation>		
+		</attribute>
+		<attribute name="expr" type="string" use="optional">
+			<annotation>
+				<documentation>
+					If this attribute is present then this is the IF condition expression.
+				</documentation>
+			</annotation>		
+		</attribute>
+		<attribute name="cond" type="string" use="optional">
+			<annotation>
+				<documentation>
+					If this attribute is present then this is the IF condition expression.
+				</documentation>
+			</annotation>		
+		</attribute>
+	</complexType>
+
+	<complexType name="ElseElementType">
+		<annotation>
+			<documentation>This type represents the ELSE element.</documentation>
+		</annotation>
+	</complexType>
+
+	<complexType name="ElseIfElementType">
+		<annotation>
+			<documentation>
+				This type represents the ELSEIF element in the scxml.
+			</documentation>
+		</annotation>
+		<attribute name="node" type="tns:VariableNameType" use="optional">
+			<annotation>
+				<documentation>This represents the node condition. If this attribute
+					is present then the value this element holds is compared against
+					the target value in the event object.</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="cond" type="string" use="optional">
+			<annotation>
+				<documentation>
+					This attribute contains the ECMA expression that must
+					evaluate to TRUE for this section to be processed.
+				</documentation>
+			</annotation>
+		</attribute>
+	</complexType>
+
+
+	<complexType name="EntryExitType">
+		<annotation>
+			<documentation>
+				This type represents the ONENTRY and ONEXIT elements.
+			</documentation>
+		</annotation>
+		<choice>
+			<element name="send" type="tns:SendType" minOccurs="0"
+				maxOccurs="unbounded">
+				<annotation>
+					<documentation>
+						This SEND elements are used to setup the state related information.
+						For example, if there is a voice component, then the send events are used
+						to set up the recognition context like grammars. In ONENTRY section, the SEND
+						events would correspond to add Grammars to recognition context. In ONEXIT
+						the SEND events would correspond to remove Grammars from recognition context.
+						These events are also used to set up context sensitive help for page.
+					</documentation>
+				</annotation>		
+			</element>
+			<element name="if" type="tns:IfElementType" minOccurs="0"
+				maxOccurs="unbounded">
+				<annotation>
+					<documentation>
+						This section is used of we need to perform actions conditionally.
+					</documentation>
+				</annotation>		
+			</element>
+			<element name="assign" type="tns:AssignType" minOccurs="0"
+				maxOccurs="unbounded">
+				<annotation>
+					<documentation>
+						This section is used to initialize/clear data variables.
+					</documentation>
+				</annotation>		
+			</element>
+		</choice>
+	</complexType>
+
+	<complexType name="GoElementType">
+		<annotation>
+			<documentation>
+				This type represents the GO element of the scxml.
+			</documentation>
+		</annotation>
+		<sequence>
+			<sequence minOccurs="0" maxOccurs="unbounded">
+				<choice>
+					<element name="send" type="tns:SendType">
+						<annotation>
+							<documentation>
+								These are the events that are sent to components,
+								as we have matched an event raised by the system.
+							</documentation>
+						</annotation>		
+					</element>
+					<element name="if" type="tns:IfElementType">
+						<annotation>
+							<documentation>
+								IF section is used if we need to apply more conditions before
+								we can perform more actions.
+							</documentation>
+						</annotation>		
+					</element>
+					<element name="assign" type="tns:AssignType">
+						<annotation>
+							<documentation>
+								Assign data to variables.
+							</documentation>
+						</annotation>		
+					</element>
+				</choice>
+			</sequence>
+		</sequence>
+		<attribute name="on" type="tns:RaisedEventType" use="required">
+			<annotation>
+				<documentation>
+					This item holds the event name for which this handler
+					is defined. 
+				</documentation>
+			</annotation>
+		</attribute>
+		<attribute name="from" type="tns:ComponentType" use="required">
+			<annotation>
+				<documentation>
+					This item holds the name of the component that raised this event. 
+				</documentation>
+			</annotation>		
+		</attribute>
+		<attribute name="node" type="tns:VariableNameType" use="optional">
+			<annotation>
+				<documentation>
+					This element is optional. If this element is present, then actions in this section
+					are performed only when event.target value matches the value provided here.
+				</documentation>
+			</annotation>		
+		</attribute>
+		<attribute name="cond" type="string" use="optional">
+			<annotation>
+				<documentation>
+					This element is optional. If this element is present, then actions in this section
+					are performed only when the condition provided evaluates to TRUE.
+				</documentation>
+			</annotation>		
+		</attribute>
+		<attribute name="to" type="tns:VariableNameType" use="optional">
+			<annotation>
+				<documentation>
+					This element is optional. If this element is present, after performing the actions
+					specified in this section, go to the state identified the value specified here.
+				</documentation>
+			</annotation>		
+		</attribute>
+		<attribute name="global" type="boolean" use="optional">
+			<annotation>
+				<documentation>
+					If this value is TRUE then it means that this handler is global handler.
+					We need to listen for this event in all the states.
+				</documentation>
+			</annotation>		
+		</attribute>
+	</complexType>
+
+	<complexType name="StateType">
+		<annotation>
+			<documentation>
+				This type represents the STATE element of scxml.
+			</documentation>
+		</annotation>
+		<sequence>
+			<element name="onentry" type="tns:EntryExitType" minOccurs="0"
+				maxOccurs="1">
+				<annotation>
+					<documentation>
+						This section contains set of actions that need
+						to be performed when application navigates in to
+						this state. The actions could be SEND, ASSIGN or IF
+						statements.
+    				</documentation>
+				</annotation>
+			</element>
+			
+			<sequence minOccurs="0" maxOccurs="unbounded" >
+				<choice >
+					<element name="go" type="tns:GoElementType" >
+						<annotation>
+							<documentation>
+								This section is a handler for handling events
+								generated in the system. Each of these entries
+								require an event name and component raising it.
+								When an event occurs in the system identified by
+								the name specified and event is raised by the
+								component specified, the actions specified in
+								this section are performed.
+		
+								For example:
+								<go on="click" from="x-html">.....</go>
+		
+								This means when x-html component raises a
+								"click" event, then actions specified in this go
+								section are performed.
+		
+								The actions can be SEND, ASSIGN or IF
+								statements.
+							</documentation>
+						</annotation>
+					</element>
+					
+					<element name="state" type="tns:StateType" >
+						<annotation>
+							<documentation>
+								This section represents the inner state.
+							</documentation>
+						</annotation>
+					</element>
+				</choice>
+			</sequence>
+
+			<element name="onexit" type="tns:EntryExitType" minOccurs="0"
+				maxOccurs="1">
+				<annotation>
+					<documentation> 
+						This section contains set of actions that need
+						to be performed when application navigates in to
+						this state. The actions could be SEND, ASSIGN or IF
+						statements.
+					</documentation>
+				</annotation>
+			</element>
+		</sequence>
+		<attribute name="id" type="tns:VariableNameType" use="required">
+		</attribute>
+		<attribute name="initialstate" type="tns:VariableNameType" use="optional">
+		</attribute>
+	</complexType>
+	<complexType name="XscxmlType">
+		<sequence>
+			<element name="initial" type="tns:InitialFinalSectionType"
+				minOccurs="0" maxOccurs="1">
+				<annotation>
+					<documentation>
+						This section contains set of actions that need
+						to be performed when this scxml is loaded.
+						The actions could be SEND, ASSIGN statements.
+						Normally in this section we will have SEND elments
+						that would initialize the components.
+    				</documentation>
+				</annotation>
+			</element>
+			<element name="datamodel" type="tns:DataModelType" minOccurs="0"
+				maxOccurs="1">
+				<annotation>
+					<documentation>
+						This section contains data model definitions
+						for this scxml. This will contain set of DATA elements
+						that would be the variables.
+    				</documentation>
+				</annotation>
+			</element>
+			<element name="state" type="tns:StateType" minOccurs="1"
+				maxOccurs="unbounded">
+    			<annotation>
+    				<documentation>
+    					This section is set of one or more states that
+    					this application be in. Application can be in one state
+    					at any given point of time. There can be states within a state.
+    				</documentation>
+    			</annotation>
+			</element>
+			<element name="final" type="tns:InitialFinalSectionType"
+				minOccurs="0" maxOccurs="1">
+    			<annotation>
+    				<documentation>
+    					This section contains set of actions that need
+    					to be performed when this scxml is unloaded (exit application).
+    					The actions could be SEND statements.
+    					Normally in this section we will have SEND elments
+    					that would de-initialize the components. This would be
+    					the clean up scenario, since we are existing this application.
+    				</documentation>
+    			</annotation>
+			</element>
+		</sequence>
+		<attribute name="initialstate" type="tns:VariableNameType"
+			use="required">
+    			<annotation>
+    				<documentation>
+    					This attribute holds the starting state this application should be
+    					in when it started.
+    				</documentation>
+    			</annotation>
+		</attribute>
+	</complexType>
+
+	<element name="xscxml" type="tns:XscxmlType">
+		<annotation>
+			<documentation>
+			</documentation>
+		</annotation>		
+	</element>
+
+</schema>

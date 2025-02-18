@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xscxml initialstate="home" xmlns="http://www.openstream.com/scxml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openstream.com/scxml scxml.xsd ">
+  <initial>
+    <send event="start" to="x-html" url="../index.html"/>
+  </initial>
+  <datamodel>
+    <data name="platform" id="appeventTargetData" expr="''"/>
+    <data name="annotation" id="annotationImageCaptureContext" expr="'false'"/>
+    <data name="annotation" id="inkProxyUrl" expr="''"/>
+    <data name="camera" id="cameraCaptureContext" expr="'false'"/>
+    <data name="documentmanager" id="docManagerConfig" expr="''"/>
+    <data name="file" id="saveFileTarget" expr="''"/>
+    <data name="oauth" id="oAuthConfigData" expr="''"/>
+    <data name="touchid" id="TargetName" expr="'myapp'"/>
+    <data name="touchid" id="touchIdConfig" expr="''"/>
+  </datamodel>
+  <state id="home">
+    <onentry/>
+    <go id="platform" on="click" from="x-html" node="getDMUser">
+      <send event="getDeviceParam" to="x-html" target="dm.user"/>
+    </go>
+    <go id="platform" on="getDeviceParamResponse" from="x-html">
+      <send event="execute" to="x-html" target="IMPlatform.onGetDMUser" data="event.value"/>
+    </go>
+    <go id="platform" on="click" from="x-html" node="appeventTargetData">
+      <assign location="_data.appeventTargetData" expr="event.value"/>
+    </go>
+    <go id="platform" on="click" from="x-html" node="sendAppEvent">
+      <send event="appEvent" to="x-dm" target="_data.appeventTargetData" data="event.value"/>
+    </go>
+    <go id="platform" on="click" from="x-html" node="evaUploadLogs">
+      <send event="uploadLogs" to="x-dm"/>
+    </go>
+    <go id="platform" on="click" from="x-html" node="evaSetLogLevel" global="true">
+      <send event="setLogLevel" to="x-dm" data="event.value"/>
+    </go>
+    <go id="platform" on="click" from="x-html" node="evaUploadInterval" global="true">
+      <send event="setUploadInterval" to="x-dm" data="event.value"/>
+    </go>
+    <go id="platform" on="click" from="x-html" node="closeSplashScreen">
+      <send event="stopSplash" to="x-container"/>
+    </go>
+    <go id="platform" on="click" from="x-html" node="openSplashScreen">
+      <send event="startSplash" to="x-container"/>
+    </go>
+    <go id="platform" on="click" from="x-html" node="exitApplication">
+      <send event="exitApplication" to="x-container"/>
+    </go>
+    <go id="platform" on="click" from="x-html" node="getCuemeInfo">
+      <send event="getCuemeInfo" to="x-dm"/>
+    </go>
+    <go id="platform" on="getCuemeInfoResponse" from="x-dm">
+      <send event="execute" to="x-html" target="IMPlatform.onGetCuemeInfo" data="event.value"/>
+    </go>
+    <go id="platform" on="cuemeBroadcast" from="x-container">
+      <send event="execute" to="x-html" target="IMPlatform.onCuemeBroadcast" data="event.value"/>
+    </go>
+    <go id="platform" on="click" from="x-html" node="getAppConfiguration">
+      <send event="getAppConfiguration" to="x-container"/>
+    </go>
+    <go id="platform" on="appConfiguration" from="x-container">
+      <send event="execute" to="x-html" target="IMPlatform.onAppConfiguration" data="event.value"/>
+    </go>
+    <go id="platform" on="click" from="x-html" node="enableSecureScreen">
+      <send event="enableSecureScreen" to="x-container"/>
+    </go>
+    <go id="platform" on="click" from="x-html" node="disableSecureScreen">
+      <send event="disableSecureScreen" to="x-container"/>
+    </go>
+    <go id="annotation" on="click" from="x-html" node="setInkProxyUrl" global="true">
+      <assign location="_data.inkProxyUrl" expr="event.value"/>
+    </go>
+    <go id="annotation" on="click" from="x-html" node="downloadAndPlayInk">
+      <send event="prepare" to="x-ink" data="_data.inkProxyUrl"/>
+      <send event="download" to="x-ink" data="event.value"/>
+    </go>
+    <go id="annotation" on="downloadComplete" from="x-ink">
+      <send event="playInk" to="x-ink" data="event.name"/>
+    </go>
+    <go id="annotation" on="inkData" from="x-ink">
+      <send event="execute" to="x-html" target="IMAnnotation.onInkData" data="event.value"/>
+    </go>
+    <go id="annotation" on="click" from="x-html" node="playInk">
+      <send event="playInk" to="x-ink" data="event.value"/>
+    </go>
+    <go id="annotation" on="playInkFailure" from="x-ink">
+      <send event="execute" to="x-html" target="IMAnnotation.onPlayInkFail" data="event.value"/>
+    </go>
+    <go id="annotation" on="windowOpened" from="x-ink">
+      <send event="execute" to="x-html" target="IMAnnotation.onWindowOpened" data="event.value"/>
+    </go>
+    <go id="annotation" on="windowClosed" from="x-ink">
+      <send event="execute" to="x-html" target="IMAnnotation.onWindowClosed" data="event.value"/>
+    </go>
+    <go id="annotation" on="click" from="x-html" node="captureImage">
+      <assign location="_data.annotationImageCaptureContext" expr="'true'"/>
+      <send event="startPictureCapture" to="x-camera" data="event.value"/>
+    </go>
+    <go id="annotation" on="ImageData" from="x-camera">
+      <if cond="_data.annotationImageCaptureContext == 'true'">
+        <assign location="_data.annotationImageCaptureContext" expr="'false'"/>
+        <send event="prepare" to="x-ink" data="_data.inkProxyUrl"/>
+        <send event="setBackgroundImageData" to="x-ink" data="event.value"/>
+      </if>
+    </go>
+    <go id="annotation" on="click" from="x-html" node="captureScreenShot">
+      <send event="startScreenCapture" to="x-device"/>
+    </go>
+    <go id="annotation" on="screenshot" from="x-device" global="true">
+      <send event="prepare" to="x-ink" data="_data.inkProxyUrl"/>
+      <send event="setBackgroundImageData" to="x-ink" data="event.value"/>
+    </go>
+    <go id="barcode" on="click" from="x-html" node="scanbarcode">
+      <send event="scan" to="x-barcode" data="event.value"/>
+    </go>
+    <go id="barcode" on="barcodeData" from="x-barcode">
+      <send event="execute" to="x-html" target="IMBarcode.onScanData" data="event.value"/>
+    </go>
+    <go id="barcode" on="barcodeScanFail" from="x-barcode">
+      <send event="execute" to="x-html" target="IMBarcode.onScanFail" data="event.value"/>
+    </go>
+    <go id="barcode" on="UIEvent" from="x-barcode">
+      <send event="execute" to="x-html" target="IMBarcode.onUIEvent" data="event.value"/>
+    </go>
+    <go id="biometric" on="click" from="x-html" node="enrollBiometric">
+      <send event="enroll" to="x-biometricsauth"/>
+    </go>
+    <go id="biometric" on="enrollSuccess" from="x-biometricsauth">
+      <send event="execute" to="x-html" target="IMBiometric.onEnrollSuccess" data="event.value"/>
+    </go>
+    <go id="biometric" on="enrollFailed" from="x-biometricsauth">
+      <send event="execute" to="x-html" target="IMBiometric.onEnrollFail" data="event.value"/>
+    </go>
+    <go id="biometric" on="click" from="x-html" node="athenticateBiometric">
+      <send event="authenticate" to="x-biometricsauth"/>
+    </go>
+    <go id="biometric" on="authenticateSuccess" from="x-biometricsauth">
+      <send event="execute" to="x-html" target="IMBiometric.onAuthSuccess" data="event.value"/>
+    </go>
+    <go id="biometric" on="authenticateFailure" from="x-biometricsauth">
+      <send event="execute" to="x-html" target="IMBiometric.onAuthFail" data="event.value"/>
+    </go>
+    <go id="biometric" on="click" from="x-html" node="deleteBiometric">
+      <send event="delete" to="x-biometricsauth" data="event.value"/>
+    </go>
+    <go id="biometric" on="deleteSuccess" from="x-biometricsauth">
+      <send event="execute" to="x-html" target="IMBiometric.deleteSuccess" data="event.value"/>
+    </go>
+    <go id="biometric" on="deleteFailed" from="x-biometricsauth">
+      <send event="execute" to="x-html" target="IMBiometric.deleteFailed" data="event.value"/>
+    </go>
+    <go id="calendar" on="click" from="x-html" node="createCalendarEvent">
+      <send event="createCalendarEvent" to="x-calendar" data="event.value"/>
+    </go>
+    <go id="calendar" on="createCalendarEventSuccess" from="x-calendar">
+      <send event="execute" to="x-html" target="IMCalendar.createCalendarEventSuccess" data="event.value"/>
+    </go>
+    <go id="calendar" on="createCalendarEventError" from="x-calendar">
+      <send event="execute" to="x-html" target="IMCalendar.createCalendarEventError" data="event.value"/>
+    </go>
+    <go id="calendar" on="click" from="x-html" node="listEvents">
+      <send event="listEvents" to="x-calendar" data="event.value"/>
+    </go>
+    <go id="calendar" on="listEventsSuccess" from="x-calendar">
+      <send event="execute" to="x-html" target="IMCalendar.listEventsSuccess" data="event.value"/>
+    </go>
+    <go id="calendar" on="listEventsError" from="x-calendar">
+      <send event="execute" to="x-html" target="IMCalendar.listEventsError" data="event.value"/>
+    </go>
+    <go id="calendar" on="click" from="x-html" node="deleteEvent">
+      <send event="deleteEvent" to="x-calendar" data="event.value"/>
+    </go>
+    <go id="calendar" on="deleteEventSuccess" from="x-calendar">
+      <send event="execute" to="x-html" target="IMCalendar.deleteEventSuccess" data="event.value"/>
+    </go>
+    <go id="calendar" on="deleteEventError" from="x-calendar">
+      <send event="execute" to="x-html" target="IMCalendar.deleteEventError" data="event.value"/>
+    </go>
+    <go id="camera" on="click" from="x-html" node="capturePicture">
+      <assign location="_data.cameraCaptureContext" expr="'true'"/>
+      <send event="startPictureCapture" to="x-camera" data="event.value"/>
+    </go>
+    <go id="camera" on="ImageData" from="x-camera">
+      <if cond="_data.cameraCaptureContext == 'true'">
+        <assign location="_data.cameraCaptureContext" expr="'false'"/>
+        <send event="execute" to="x-html" target="IMCamera.onImageCapture" data="event.value"/>
+      </if>
+    </go>
+    <go id="camera" on="onPictureCaptureFail" from="x-camera">
+      <send event="execute" to="x-html" target="IMCamera.onImageCaptureFail" data="event.value"/>
+    </go>
+    <go id="camera" on="onPictureCaptureComplete" from="x-camera">
+      <send event="execute" to="x-html" target="IMCamera.onImageCaptureComplete" data="event.value"/>
+    </go>
+    <go id="camera" on="onPictureCaptureAborted" from="x-camera">
+      <send event="execute" to="x-html" target="IMCamera.onPictureCaptureAborted" data="event.value"/>
+    </go>
+    <go id="camera" on="click" from="x-html" node="startVideoCapture">
+      <send event="startVideoCapture" to="x-camera" data="event.value"/>
+    </go>
+    <go id="camera" on="VideoFile" from="x-camera">
+      <send event="execute" to="x-html" target="IMCamera.onVideoCapture" data="event.value"/>
+    </go>
+    <go id="camera" on="onVideoCaptureComplete" from="x-camera">
+      <send event="execute" to="x-html" target="IMCamera.onVideoCaptureComplete" data="event.value"/>
+    </go>
+    <go id="camera" on="onVideoCaptureFail" from="x-camera">
+      <send event="execute" to="x-html" target="IMCamera.onVideoCaptureFail" data="event.value"/>
+    </go>
+    <go id="camera" on="onVideoCaptureAborted" from="x-camera">
+      <send event="execute" to="x-html" target="IMCamera.onVideoCaptureAborted" data="event.value"/>
+    </go>
+    <go id="camera" on="click" from="x-html" node="getCameraDevices">
+      <send event="getCameraDevices" to="x-camera" data="event.value"/>
+    </go>
+    <go id="camera" on="getCameraDevicesFail" from="x-camera">
+      <send event="execute" to="x-html" target="IMCamera.onGetCameraDevicesFail" data="event.value"/>
+    </go>
+    <go id="camera" on="cameraDevices" from="x-camera">
+      <send event="execute" to="x-html" target="IMCamera.onCameraDevices" data="event.value"/>
+    </go>
+    <go id="camera" on="UIEvent" from="x-camera">
+      <send event="execute" to="x-html" target="IMCamera.onUIEvent" data="event.value"/>
+    </go>
+    <go id="contact" on="click" from="x-html" node="getContacts">
+      <send event="getContacts" to="x-contact" data="event.value"/>
+    </go>
+    <go id="contact" on="getContactsSuccess" from="x-contact">
+      <send event="execute" to="x-html" target="IMContact.getContactsSuccess" data="event.value"/>
+    </go>
+    <go id="contact" on="getContactsError" from="x-contact">
+      <send event="execute" to="x-html" target="IMContact.getContactsError" data="event.value"/>
+    </go>
+    <go id="contact" on="click" from="x-html" node="pickContact">
+      <send event="pickContact" to="x-contact"/>
+    </go>
+    <go id="contact" on="pickContactSuccess" from="x-contact">
+      <send event="execute" to="x-html" target="IMContact.pickContactSuccess" data="event.value"/>
+    </go>
+    <go id="contact" on="pickContactError" from="x-contact">
+      <send event="execute" to="x-html" target="IMContact.pickContactError" data="event.value"/>
+    </go>
+    <go id="contact" on="contactAccessDenied" from="x-contact">
+      <send event="execute" to="x-html" target="IMContact.contactAccessDenied" data="event.value"/>
+    </go>
+    <go id="database" on="click" from="x-html" node="setQueryXML" global="true">
+      <send event="setQueryXML" to="x-db" target="{'db':'EvacafeDB'}" data="event.value"/>
+    </go>
+    <go id="database" on="click" from="x-html" node="IMDatabase_setQueryXML" global="true">
+      <send event="setQueryXML" to="x-db" target="event.value" url="./sqlQueries.xml"/>
+    </go>
+    <go id="database" on="querySuccess" from="x-db" global="true">
+      <send event="execute" to="x-html" target="IMDatabase.onQueryXMLSuccess" data="event.name"/>
+    </go>
+    <go id="database" on="queryError" from="x-db" global="true">
+      <send event="execute" to="x-html" target="IMDatabase.onQueryXMLFail" data="event.name"/>
+    </go>
+    <go id="database" on="click" from="x-html" node="handleDBReqObj" global="true">
+      <send event="processRequest" to="x-db" data="event.value"/>
+    </go>
+    <go id="database" on="processQueryResult" from="x-db" global="true">
+      <send event="execute" to="x-html" target="invokeSuccessCallback" data="event.value"/>
+    </go>
+    <go id="database" on="processQueryError" from="x-db" global="true">
+      <send event="execute" to="x-html" target="invokeErrorCallback" data="event.value"/>
+    </go>
+    <go id="database" on="batchRequestStarted" from="x-db" global="true">
+      <send event="execute" to="x-html" target="invokeBatchStarted" data="event.value"/>
+    </go>
+    <go id="database" on="batchRequestComplete" from="x-db" global="true">
+      <send event="execute" to="x-html" target="invokeBatchComplete" data="event.value"/>
+    </go>
+    <go id="device" on="click" from="x-html" node="disableButton">
+      <send event="disableButton" to="x-html" data="event.value"/>
+    </go>
+    <go id="device" on="click" from="x-html" node="enableButton">
+      <send event="enableButton" to="x-html" data="event.value"/>
+    </go>
+    <go id="device" on="click" from="x-html" node="setOrientation">
+      <send event="setOrientation" to="x-html" data="event.value"/>
+    </go>
+    <go id="device" on="keyPressed" from="x-html">
+      <send event="execute" target="IMDevice.onKeyPressed" to="x-html" data="event.value"/>
+    </go>
+    <go id="documentmanager" on="click" from="x-html" node="IMDocumentManager_openDocManager" global="true">
+      <send event="loadUrl" to="x-docmanager" target="event.value" data="_data.docManagerConfig"/>
+      <assign location="_data.docManagerConfig" expr="''"/>
+    </go>
+    <go id="documentmanager" on="click" from="x-html" node="IMDocumentManager_setDocumentConfigObj" global="true">
+      <assign location="_data.docManagerConfig" expr="event.value"/>
+    </go>
+    <go id="documentmanager" on="showSuccess" from="x-docmanager" global="true">
+      <send event="execute" to="x-html" target="IMDocumentManager.onShowSuccess"/>
+    </go>
+    <go id="documentmanager" on="pageLoadSuccess" from="x-docmanager" global="true">
+      <send event="execute" to="x-html" target="IMDocumentManager.onShowSuccess"/>
+    </go>
+    <go id="documentmanager" on="click" from="x-html" node="IMDocumentManager_execute" global="true">
+      <send event="execute" to="x-docmanager" target="event.value"/>
+    </go>
+    <go id="documentmanager" on="downloadComplete" from="x-docmanager" global="true">
+      <send event="execute" to="x-html" target="IMDocumentManager.onShowDownloadComplete" data="event.value"/>
+    </go>
+    <go id="documentmanager" on="saveSuccess" from="x-docmanager" global="true">
+      <send event="execute" to="x-html" target="IMDocumentManager.onShowDownloadComplete" data="event.value"/>
+    </go>
+    <go id="documentmanager" on="didClose" from="x-docmanager" global="true">
+      <send event="execute" to="x-html" target="IMDocumentManager.onDidClose" data="event.value"/>
+    </go>
+    <go id="documentmanager" on="uievent" from="x-docmanager" global="true">
+      <send event="execute" to="x-html" target="IMDocumentManager.onUIEvent" data="event.value"/>
+    </go>
+    <go id="file" on="click" from="x-html" node="saveFileTarget">
+      <assign location="_data.saveFileTarget" expr="event.value"/>
+    </go>
+    <go id="file" on="click" from="x-html" node="save">
+      <send event="save" to="x-file" target="_data.saveFileTarget" data="event.value"/>
+    </go>
+    <go id="file" on="saveSuccess" from="x-file">
+      <send event="execute" to="x-html" target="IMFile.onSaveSuccess" data="event.value"/>
+    </go>
+    <go id="file" on="saveFail" from="x-file">
+      <send event="execute" to="x-html" target="IMFile.onSaveFail" data="event.value"/>
+    </go>
+    <go id="file" on="click" from="x-html" node="deleteFile">
+      <send event="delete" to="x-file" target="event.value"/>
+    </go>
+    <go id="file" on="deleteSuccess" from="x-file">
+      <send event="execute" to="x-html" target="IMFile.onDeleteSuccess" data="event.value"/>
+    </go>
+    <go id="file" on="deleteFail" from="x-file">
+      <send event="execute" to="x-html" target="IMFile.onDeleteFail" data="event.value"/>
+    </go>
+    <go id="file" on="click" from="x-html" node="cleanup">
+      <send event="cleanup" to="x-file" data="null"/>
+    </go>
+    <go id="file" on="cleanupComplete" from="x-file">
+      <send event="execute" to="x-html" target="IMFile.onCleanupComplete" data="event.value"/>
+    </go>
+    <go id="httpclient" on="click" from="x-html" cond="event.name.indexOf('doProcessHttpRequestObj', event.name.length - 'doProcessHttpRequestObj'.length) !== -1" global="true">
+      <send event="processRequests" to="x-http" data="event.value"/>
+    </go>
+    <go id="httpclient" on="fetchResponseAsJSON" from="x-http" global="true">
+      <assign location="_data.httpSuccessCbFn" expr="(event.value.windowName != null &amp;&amp; event.value.windowName != '') ?  (event.value.windowName + '.httprequest_handleHttpResponseObj' ) : 'httprequest_handleHttpResponseObj'"/>
+      <send event="execute" to="x-html" target="_data.httpSuccessCbFn" data="event.value"/>
+    </go>
+    <go id="httpclient" on="fetchErrorAsJSON" from="x-http" global="true">
+      <assign location="_data.httpErrorCbFn" expr="(event.value.windowName != null &amp;&amp; event.value.windowName != '') ?  (event.value.windowName + '.httprequest_handleHttpResponseObj' ) : 'httprequest_handleHttpResponseObj'"/>
+      <send event="execute" to="x-html" target="_data.httpErrorCbFn" data="event.value"/>
+    </go>
+    <go id="launchapp" on="click" from="x-html" node="launchAppAddContact">
+      <send event="addContact" to="x-launchapp" data="event.value"/>
+    </go>
+    <go id="launchapp" on="click" from="x-html" node="launchAppPrint">
+      <send event="print" to="x-launchapp" data="event.value"/>
+    </go>
+    <go id="launchapp" on="click" from="x-html" node="launchAppEmail">
+      <send event="email" to="x-launchapp" data="event.value"/>
+    </go>
+    <go id="launchapp" on="click" from="x-html" node="launchApp">
+      <send event="launch" to="x-launchapp" data="event.value"/>
+    </go>
+    <go id="launchapp" on="didLaunchSuccess" from="x-launchapp">
+      <send event="execute" to="x-html" target="IMLaunchApp.onLaunchAppSuccess" data="event.value"/>
+    </go>
+    <go id="launchapp" on="didLaunchFail" from="x-launchapp">
+      <send event="execute" to="x-html" target="IMLaunchApp.onLaunchAppFail" data="event.value"/>
+    </go>
+    <go id="launchapp" on="click" from="x-html" node="showAppSettings">
+      <send event="openAppSettings" to="x-launchapp" data="event.value"/>
+    </go>
+    <go id="launchapp" on="openAppSettingsSuccess" from="x-launchapp">
+      <send event="execute" to="x-html" target="IMLaunchApp.onLaunchAppSuccess" data="event.value"/>
+    </go>
+    <go id="launchapp" on="openAppSettingsFail" from="x-launchapp">
+      <send event="execute" to="x-html" target="IMLaunchApp.onLaunchAppFail" data="event.value"/>
+    </go>
+    <go id="launchapp" on="click" from="x-html" node="openBrowser">
+      <send event="openBrowser" to="x-launchapp" data="event.value"/>
+    </go>
+    <go id="launchapp" on="openBrowserSuccess" from="x-launchap">
+      <send event="execute" to="x-html" target="IMLaunchApp.onBrowserOpenSuccess" data="event.value"/>
+    </go>
+    <go id="launchapp" on="click" from="x-html" node="closeBrowser">
+      <send event="closeBrowser" to="x-launchapp" data="event.value"/>
+    </go>
+    <go id="launchapp" on="browserClosed" from="x-launchapp">
+      <send event="execute" to="x-html" target="IMLaunchApp.onBrowserCloseSuccess" data="event.value"/>
+    </go>
+    <go id="launchapp" on="click" from="x-html" node="launchAppShare">
+      <send event="share" to="x-launchapp" data="event.value"/>
+    </go>
+    <go id="launchapp" on="shareSuccess" from="x-launchapp">
+      <send event="execute" to="x-html" target="IMLaunchApp.onLaunchAppSuccess" data="event.value"/>
+    </go>
+    <go id="launchapp" on="shareError" from="x-launchapp">
+      <send event="execute" to="x-html" target="IMLaunchApp.onLaunchAppFail" data="event.value"/>
+    </go>
+    <go id="location" on="click" from="x-html" node="enableReporting">
+      <send event="enableReporting" to="x-loc" data="event.value"/>
+    </go>
+    <go id="location" on="click" from="x-html" node="disableReporting">
+      <send event="disableReporting" to="x-loc"/>
+    </go>
+    <go id="location" on="click" from="x-html" node="getCurrentLocation">
+      <send event="getCurrentLocation" to="x-loc"/>
+    </go>
+    <go id="location" on="click" from="x-html" node="getCurrentStatus">
+      <send event="getCurrentStatus" to="x-loc"/>
+    </go>
+    <go id="location" on="currentLocation" from="x-loc">
+      <send event="execute" to="x-html" target="IMLocation.currentLocation" data="event.value"/>
+    </go>
+    <go id="location" on="currentStatus" from="x-loc">
+      <send event="execute" to="x-html" target="IMLocation.currentLocation" data="event.value"/>
+    </go>
+    <go id="location" on="serviceNotAvailable" from="x-loc">
+      <send event="execute" to="x-html" target="IMLocation.serviceNotAvailable" data="event.value"/>
+    </go>
+    <go id="location" on="gpsEnabled" from="x-loc">
+      <send event="execute" to="x-html" target="IMLocation.gpsEnabled" data="event.value"/>
+    </go>
+    <go id="location" on="gpsDisabled" from="x-loc">
+      <send event="execute" to="x-html" target="IMLocation.gpsDisabled" data="event.value"/>
+    </go>
+    <go id="notification" on="remoteNotification" from="x-notification">
+      <send event="execute" to="x-html" target="IMNotification.onRemoteNotification" data="event.value"/>
+    </go>
+    <go id="notification" on="click" from="x-html" node="updateNotificationStatus">
+      <send event="updateNotificationStatus" to="x-notification" data="event.value"/>
+    </go>
+    <go id="notification" on="click" from="x-html" node="getNotifications">
+      <send event="getNotifications" to="x-notification" data="event.value"/>
+    </go>
+    <go id="notification" on="getNotificationsResponse" from="x-notification">
+      <send event="execute" to="x-html" target="IMNotification.onGetNotificationsResponse" data="event.value"/>
+    </go>
+    <go id="notification" on="click" from="x-html" node="getNotificationSettings">
+      <send event="getNotificationSettings" to="x-notification" data=""/>
+    </go>
+    <go id="notification" on="getNotificationSettingsSuccess" from="x-notification">
+      <send event="execute" to="x-html" target="IMNotification.onGetNotificationSettingsSuccess" data="event.value"/>
+    </go>
+    <go id="notification" on="click" from="x-html" node="setBadgeCount">
+      <send event="setBadgeCount" to="x-container" data="event.value"/>
+    </go>
+    <go id="notification" on="badgeCountError" from="x-container">
+      <send event="execute" to="x-html" target="IMNotification.onBadgeCountError" data="event.value"/>
+    </go>
+    <go id="notification" on="click" from="x-html" node="getBadgeCount">
+      <send event="getBadgeCount" to="x-container"/>
+    </go>
+    <go id="notification" on="badgeCount" from="x-container">
+      <send event="execute" to="x-html" target="IMNotification.onBadgeCount" data="event.value"/>
+    </go>
+    <go id="notification" on="click" from="x-html" node="clearBadgeCount">
+      <send event="clearBadgeCount" to="x-container"/>
+    </go>
+    <go id="notification" on="click" from="x-html" node="incrementBadgeCountBy">
+      <send event="incrementBadgeCountBy" to="x-container" data="event.value"/>
+    </go>
+    <go id="notification" on="click" from="x-html" node="decrementBadgeCountBy">
+      <send event="decrementBadgeCountBy" to="x-container" data="event.value"/>
+    </go>
+    <go id="oauth" on="click" from="x-html" node="setOAuthConfigData">
+      <assign location="_data.oAuthConfigData" expr="event.value"/>
+    </go>
+    <go id="oauth" on="click" from="x-html" node="authorizeAccessToken">
+      <send event="authorize" to="xe-oauth" target="event.value" data="_data.oAuthConfigData"/>
+    </go>
+    <go id="oauth" on="authorizationSuccess" from="xe-oauth">
+      <send event="execute" to="x-html" target="IMOAuth.onAuthorizationSuccess" data="event.value"/>
+    </go>
+    <go id="oauth" on="authorizationFail" from="xe-oauth">
+      <send event="execute" to="x-html" target="IMOAuth.onAuthorizationFail" data="event.value"/>
+    </go>
+    <go id="oauth" on="click" from="x-html" node="isTokenAvailable">
+      <send event="isAccessTokenAvailable" to="xe-oauth" target="event.value"/>
+    </go>
+    <go id="oauth" on="isAccessTokenAvailableResponse" from="xe-oauth">
+      <send event="execute" to="x-html" target="IMOAuth.onIsTokenAvailable" data="event.value"/>
+    </go>
+    <go id="oauth" on="click" from="x-html" node="getToken">
+      <send event="getAccessToken" to="xe-oauth" target="event.value"/>
+    </go>
+    <go id="oauth" on="getAccessTokenSuccess" from="xe-oauth">
+      <send event="execute" to="x-html" target="IMOAuth.onGetTokenSuccess" data="event.value"/>
+    </go>
+    <go id="oauth" on="getAccessTokenFail" from="xe-oauth">
+      <send event="execute" to="x-html" target="IMOAuth.onGetTokenFail" data="event.value"/>
+    </go>
+    <go id="oauth" on="click" from="x-html" node="refreshToken">
+      <send event="refreshAccessToken" to="xe-oauth" target="event.value"/>
+    </go>
+    <go id="oauth" on="refreshAccessTokenSuccess" from="xe-oauth">
+      <send event="execute" to="x-html" target="IMOAuth.onRefreshTokenSuccess" data="event.value"/>
+    </go>
+    <go id="oauth" on="refreshAccessTokenFail" from="xe-oauth">
+      <send event="execute" to="x-html" target="IMOAuth.onRefreshTokenFail" data="event.value"/>
+    </go>
+    <go id="oauth" on="click" from="x-html" node="deleteToken">
+      <send event="deleteAccessToken" to="xe-oauth" target="event.value"/>
+    </go>
+    <go id="oauth" on="deleteAccessTokenSuccess" from="xe-oauth">
+      <send event="execute" to="x-html" target="IMOAuth.onDeleteTokenSuccess" data="event.value"/>
+    </go>
+    <go id="oauth" on="deleteAccessTokenFail" from="xe-oauth">
+      <send event="execute" to="x-html" target="IMOAuth.onDeleteTokenFail" data="event.value"/>
+    </go>
+    <go id="oauth" on="click" from="x-html" node="logoutSession">
+      <send event="logout" to="xe-oauth" target="event.value"/>
+    </go>
+    <go id="oauth" on="logoutSuccess" from="xe-oauth">
+      <send event="execute" to="x-html" target="IMOAuth.onLogoutSuccess" data="event.value"/>
+    </go>
+    <go id="oauth" on="logoutFail" from="xe-oauth">
+      <send event="execute" to="x-html" target="IMOAuth.onLogoutFail" data="event.value"/>
+    </go>
+    <go id="signature" on="click" from="x-html" node="captureSignature">
+      <send event="captureSignature" to="x-sign"/>
+    </go>
+    <go id="signature" on="click" from="x-html" node="setContent">
+      <send event="setContent" to="x-sign" data="event.value"/>
+    </go>
+    <go id="signature" on="setSignature" from="x-sign">
+      <send event="execute" to="x-html" target="IMSignature.onSignatureData" data="event.value"/>
+    </go>
+    <go id="signature" on="click" from="x-html" node="captureSignatureImage">
+      <send event="captureSignatureImage" to="x-sign"/>
+    </go>
+    <go id="signature" on="setSignatureImage" from="x-sign">
+      <send event="execute" to="x-html" target="IMSignature.onSignatureImage" data="event.value"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="initCsr" global="true">
+      <send event="setup" to="xe-csrvoice" data="event.value"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="initTts" global="true">
+      <send event="prepareSynthesizer" to="x-voice" data="event.value"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="initOkeva" global="true">
+      <send event="activate" to="x-okeva" data="event.value"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="initEmbvoice" global="true">
+      <send event="setup" to="xe-embvoice" data="event.value"/>
+    </go>
+    <go id="speech" on="trigger" from="x-okeva" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xOkeva.onTrigger" data="_data.currentActiveState"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="xOkevaStart" global="true">
+      <send event="activate" to="x-okeva" data="OKEVA"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="xOkevaStop" global="true">
+      <send event="deactivate" to="x-okeva" data="OKEVA"/>
+    </go>
+    <go id="speech" on="activateSuccess" from="x-okeva" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xOkeva.onActivateSuccess" data="event.value"/>
+    </go>
+    <go id="speech" on="activateFailed" from="x-okeva" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xOkeva.onActivateFail" data="event.value"/>
+    </go>
+    <go id="speech" on="deactivateSuccess" from="x-okeva" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xOkeva.onDeactivateSuccess" data="event.value"/>
+    </go>
+    <go id="speech" on="deactivateFailed" from="x-okeva" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xOkeva.onDeactivateFail" data="event.value"/>
+    </go>
+    <go id="speech" on="setupSuccess" from="xe-embvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeEmbvoice.onSetupSuccess" data="event.value"/>
+    </go>
+    <go id="speech" on="setupFail" from="xe-embvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeEmbvoice.onSetupFail" data="event.value"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="xeEmbvoiceStart" global="true">
+      <send event="start" to="xe-embvoice" data="event.value"/>
+    </go>
+    <go id="speech" on="startSuccess" from="xe-embvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeEmbvoice.onStartSuccess" data="event.value"/>
+    </go>
+    <go id="speech" on="startFail" from="xe-embvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeEmbvoice.onStartFail" data="event.value"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="xeEmbvoiceStop" global="true">
+      <send event="stop" to="xe-embvoice" data="event.value"/>
+    </go>
+    <go id="speech" on="stopSuccess" from="xe-embvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeEmbvoice.onStopSuccess" data="event.value"/>
+    </go>
+    <go id="speech" on="stopFail" from="xe-embvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeEmbvoice.onStopFail" data="event.value"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="xeEmbvoiceSuspend" global="true">
+      <send event="suspend" to="xe-embvoice" data="event.value"/>
+    </go>
+    <go id="speech" on="suspendSuccess" from="xe-embvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeEmbvoice.onSuspendSuccess" data="event.value"/>
+    </go>
+    <go id="speech" on="suspendFail" from="xe-embvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeEmbvoice.onSuspendFail" data="event.value"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="xeEmbvoiceResume" global="true">
+      <send event="start" to="xe-embvoice" data="event.value"/>
+    </go>
+    <go id="speech" on="resumeSuccess" from="xe-embvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeEmbvoice.onResumeSuccess" data="event.value"/>
+    </go>
+    <go id="speech" on="resumeFail" from="xe-embvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeEmbvoice.onResumeFail" data="event.value"/>
+    </go>
+    <go id="speech" on="speechResult" from="xe-embvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeEmbvoice.onSpeechResult" data="event.value"/>
+    </go>
+    <go id="speech" on="speechError" from="xe-embvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeEmbvoice.onSpeechError" data="event.value"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="xeEmbvoiceRestart" global="true">
+      <send event="restartEngine" to="xe-embvoice" data="restart"/>
+    </go>
+    <go id="speech" on="restartEngineSuccess" from="xe-embvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeEmbvoice.onRestartEngineSuccess" data="event.value"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="xeEmbvoiceActivate" global="true">
+      <send event="activateEngine" to="xe-embvoice" data="event.value"/>
+    </go>
+    <go id="speech" on="activateEngineSuccess" from="xe-embvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeEmbvoice.onActivateEngineSuccess" data="event.value"/>
+    </go>
+    <go id="speech" on="activateEngineFail" from="xe-embvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeEmbvoice.onActivateEngineFail" data="event.value"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="xeEmbvoiceDeactivate" global="true">
+      <send event="deactivateEngine" to="xe-embvoice" data="event.value"/>
+    </go>
+    <go id="speech" on="deactivateEngineSuccess" from="xe-embvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeEmbvoice.onDeactivateEngineSuccess" data="event.value"/>
+    </go>
+    <go id="speech" on="deactivateEngineFail" from="xe-embvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeEmbvoice.onDeactivateEngineFail" data="event.value"/>
+    </go>
+    <go id="speech" on="setupSuccess" from="xe-csrvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeCsrvoice.onSetupSuccess" data="event.value"/>
+    </go>
+    <go id="speech" on="setupFail" from="xe-csrvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeCsrvoice.onSetupFail" data="event.value"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="xeCsrStart" global="true">
+      <send event="start" to="xe-csrvoice" data="event.value"/>
+    </go>
+    <go id="speech" on="startSuccess" from="xe-csrvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeCsrvoice.onStartSuccess" data="event.value"/>
+    </go>
+    <go id="speech" on="startFail" from="xe-csrvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeCsrvoice.onStartFail" data="event.value"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="xeCsrStop" global="true">
+      <send event="stop" to="xe-csrvoice" data="event.value"/>
+    </go>
+    <go id="speech" on="stopSuccess" from="xe-csrvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeCsrvoice.onStopSuccess" data="event.value"/>
+    </go>
+    <go id="speech" on="stopFail" from="xe-csrvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeCsrvoice.onStopFail" data="event.value"/>
+    </go>
+    <go id="speech" on="partialSpeechResult" from="xe-csrvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeCsrvoice.onPartialSpeechResult" data="event.value"/>
+    </go>
+    <go id="speech" on="finalSpeechResult" from="xe-csrvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeCsrvoice.onFinalSpeechResult" data="event.value"/>
+    </go>
+    <go id="speech" on="speechError" from="xe-csrvoice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xeCsrvoice.onSpeechError" data="event.value"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="xVoiceTTSPlay" global="true">
+      <send event="playText" to="x-voice" data="event.value"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="xVoiceTTSStop" global="true">
+      <send event="stopSynthesize" to="x-voice"/>
+    </go>
+    <go id="speech" on="playStarted" from="x-voice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xVoiceTTS.onPlayStarted" data="event.value"/>
+    </go>
+    <go id="speech" on="playCompleted" from="x-voice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xVoiceTTS.onPlayCompleted" data="event.value"/>
+    </go>
+    <go id="speech" on="playAborted" from="x-voice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xVoiceTTS.onPlayAborted" data="event.value"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="xVoiceTTSPause" global="true">
+      <send event="pausePlay" to="x-voice" data="event.value"/>
+    </go>
+    <go id="speech" on="click" from="x-html" node="xVoiceTTSResume" global="true">
+      <send event="resumePlay" to="x-voice" data="event.value"/>
+    </go>
+    <go id="speech" on="playPaused" from="x-voice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xVoiceTTS.onPlayPaused" data="event.value"/>
+    </go>
+    <go id="speech" on="playResumed" from="x-voice" global="true">
+      <send event="execute" to="x-html" target="VoiceComponentManager.xVoiceTTS.onPlayResumed" data="event.value"/>
+    </go>
+    <go id="touchid" on="click" from="x-html" node="setTouchIdConfig">
+      <assign location="_data.touchIdConfig" expr="event.value"/>
+    </go>
+    <go id="touchid" on="click" from="x-html" node="getTouchIdTargetName">
+      <send event="execute" to="x-html" target="touchIdHandler.targetNameResponse" data="_data.TargetName"/>
+    </go>
+    <go id="touchid" on="click" from="x-html" node="getSupportedBiometrics">
+      <send event="getSupportedBiometrics" to="x-deviceBiometrics" data=""/>
+    </go>
+    <go id="touchid" on="getSupportedBiometricsResponse" from="x-deviceBiometrics">
+      <send event="execute" to="x-html" target="touchIdHandler.supportedBiometricsDataResponse" data="event.value"/>
+    </go>
+    <go id="touchid" on="click" from="x-html" node="setdeviceBiometricConfig">
+      <send event="setConfig" to="x-deviceBiometrics" data="event.value"/>
+    </go>
+    <go id="touchid" on="click" from="x-html" node="deleteAllTouchId">
+      <send event="deleteAll" to="x-deviceBiometrics" data=""/>
+    </go>
+    <go id="touchid" on="deleteAllSuccess" from="x-deviceBiometrics">
+      <send event="execute" to="x-html" target="touchIdHandler.deleteAllTouchIdSuccess" data="deleteAllSuccess"/>
+    </go>
+    <go id="touchid" on="deleteAllFail" from="x-deviceBiometrics">
+      <send event="execute" to="x-html" target="touchIdHandler.deleteAllTouchIdError" data="event.value"/>
+    </go>
+    <go id="touchid" on="click" from="x-html" node="deleteTouchId">
+      <send event="delete" to="x-deviceBiometrics" target="event.value"/>
+    </go>
+    <go id="touchid" on="deleteSuccess" from="x-deviceBiometrics">
+      <send event="execute" to="x-html" target="touchIdHandler.deleteTouchIdSuccess" data="deleteSuccess"/>
+    </go>
+    <go id="touchid" on="deleteFail" from="x-deviceBiometrics">
+      <send event="execute" to="x-html" target="touchIdHandler.deleteTouchIdError" data="event.value"/>
+    </go>
+    <go id="touchid" on="click" from="x-html" node="saveTouchId">
+      <send event="save" to="x-deviceBiometrics" target="_data.touchIdConfig" data="event.value" secure="true"/>
+    </go>
+    <go id="touchid" on="saveSuccess" from="x-deviceBiometrics">
+      <send event="execute" to="x-html" target="touchIdHandler.saveTouchIdSuccess" data="Save Sucess"/>
+    </go>
+    <go id="touchid" on="saveFail" from="x-deviceBiometrics">
+      <send event="execute" to="x-html" target="touchIdHandler.saveTouchIdError" data="event.value"/>
+    </go>
+    <go id="touchid" on="click" from="x-html" node="readTouchId">
+      <send event="read" to="x-deviceBiometrics" target="_data.touchIdConfig"/>
+    </go>
+    <go id="touchid" on="readSuccess" from="x-deviceBiometrics">
+      <send event="execute" to="x-html" target="touchIdHandler.readTouchIdSuccess" data="event.value" secure="true"/>
+    </go>
+    <go id="touchid" on="readFail" from="x-deviceBiometrics">
+      <send event="execute" to="x-html" target="touchIdHandler.readTouchIdError" data="event.value"/>
+    </go>
+    <go id="touchid" on="click" from="x-html" node="isKeySaved">
+      <send event="isKeySaved" to="x-deviceBiometrics" target="_data.TargetName" data="event.value"/>
+    </go>
+    <go id="touchid" on="isKeySavedResponse" from="x-deviceBiometrics">
+      <send event="execute" to="x-html" target="touchIdHandler.touchIdKeySavedResponse" data="event.value"/>
+    </go>
+    <go id="vision" on="click" from="x-html" node="setVisionConfig">
+      <send event="setup" to="x-vision" data="event.value"/>
+    </go>
+    <go id="vision" on="setupSuccess" from="x-vision">
+      <send event="execute" to="x-html" target="IMVision.onSetupSuccess" data="event.value"/>
+    </go>
+    <go id="vision" on="setupFail" from="x-vision">
+      <send event="execute" to="x-html" target="IMVision.onSetupFail" data="event.value"/>
+    </go>
+    <go id="vision" on="click" from="x-html" node="detectBlur">
+      <send event="detectBlur" to="x-vision" data="event.value"/>
+    </go>
+    <go id="vision" on="detectBlurSuccess" from="x-vision">
+      <send event="execute" to="x-html" target="IMVision.onDetectBlurSuccess" data="event.value"/>
+    </go>
+    <go id="vision" on="detectBlurFail" from="x-vision">
+      <send event="execute" to="x-html" target="IMVision.onDetectBlurFail" data="event.value"/>
+    </go>
+    <go id="vision" on="click" from="x-html" node="detectText">
+      <send event="detectText" to="x-vision" data="event.value"/>
+    </go>
+    <go id="vision" on="detectTextSuccess" from="x-vision">
+      <send event="execute" to="x-html" target="IMVision.onDetectTextSuccess" data="event.value"/>
+    </go>
+    <go id="vision" on="detectTextFail" from="x-vision">
+      <send event="execute" to="x-html" target="IMVision.onDetectTextFail" data="event.value"/>
+    </go>
+    <go id="vision" on="click" from="x-html" node="getImageProperties">
+      <send event="getImageProperties" to="x-vision" data="event.value"/>
+    </go>
+    <go id="vision" on="getImagePropertiesSuccess" from="x-vision">
+      <send event="execute" to="x-html" target="IMVision.onGetImagePropertiesSuccess" data="event.value"/>
+    </go>
+    <go id="vision" on="getImagePropertiesFail" from="x-vision">
+      <send event="execute" to="x-html" target="IMVision.onGetImagePropertiesFail" data="event.value"/>
+    </go>
+    <onexit/>
+  </state>
+  <final/>
+</xscxml>

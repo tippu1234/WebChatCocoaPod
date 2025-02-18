@@ -1,0 +1,16 @@
+PODS:
+  - WebChatPod (0.1.0)
+
+DEPENDENCIES:
+  - WebChatPod (from `../`)
+
+EXTERNAL SOURCES:
+  WebChatPod:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  WebChatPod: e06949550c1c4dfa1c51e960c4782aed056a8a74
+
+PODFILE CHECKSUM: 943121b395346fb1b62531ed53a0bee7d4fc1a61
+
+COCOAPODS: 1.16.2

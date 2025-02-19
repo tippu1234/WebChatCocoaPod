@@ -43,7 +43,7 @@ TODO: Add long description of the pod here.
   #}
 
   s.resources = ["WebChatPod/Classes/**/*.xib",
-  "WebChatPod/Classes/Files/evawebchat/**/*.{png,js,svg,xsd,html,scxml,xml}"]
+  "WebChatPod/Classes/evawebchat/**/*.{png,js,svg,xsd,html,scxml,xml}"]
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

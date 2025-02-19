@@ -31,7 +31,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '12.0'
   s.swift_version = '5.0'
 
-  s.source_files = 'WebChatPod/Classes/Files/*'
+  s.source_files = 'WebChatPod/Classes/Files/*.swift'
   
   #s.pod_target_xcconfig = {
   #  'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64 armv7 arm64',

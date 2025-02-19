@@ -47,7 +47,6 @@ TODO: Add long description of the pod here.
     "WebChatPod/Classes/**/*.js",
     "WebChatPod/Classes/evawebchat/**/*.{png,js,svg,scxml,xsd,xml}",
     "WebChatPod/Classes/**/*.html",
-    "WebChatPod/Classes/**/*.svg",
     "WebChatPod/Classes/**/*.css",
     "WebChatPod/Classes/**/*.txt"
   ]

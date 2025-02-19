@@ -41,10 +41,6 @@ TODO: Add long description of the pod here.
    # 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64 armv7 arm64',
    # 'VALID_ARCHS' => 'x86_64 armv7 arm64',
   #}
-  
-  s.resources = [
-    'WebChatPod/Classes/Files/evawebchat/**/*.{png,js,svg,xsd,html,scxml,xml}'
-  ]
 
   s.resources = ["WebChatPod/Classes/**/*.xib",
   "WebChatPod/Classes/Files/evawebchat/**/*.{png,js,svg,xsd,html,scxml,xml}"]

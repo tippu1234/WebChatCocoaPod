@@ -45,7 +45,7 @@ TODO: Add long description of the pod here.
   # s.resource_bundles = {
   #   'WebChatPod' => ['WebChatPod/Assets/*.png']
   # }
-  s.resources = ["WebChatPod/*.xib"]
+  s.resources = ["Files/EVAWebChatView.xib"]
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

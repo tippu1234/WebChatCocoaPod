@@ -42,11 +42,10 @@ TODO: Add long description of the pod here.
    # 'VALID_ARCHS' => 'x86_64 armv7 arm64',
   #}
   
-  s.resource_bundles = {
-    'WebChatPodResources' => [
-      'WebChatPod/Classes/Files/evawebchat/**/*.{png,js,svg,xsd}'
-    ]
-  }
+  s.resources = [
+    'WebChatPod/Classes/Files/evawebchat/**/*.{png,js,svg,xsd,html,scxml,xml}'
+  ]
+
   s.resources = ["WebChatPod/Classes/**/*.xib"]
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

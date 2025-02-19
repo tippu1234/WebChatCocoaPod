@@ -43,7 +43,12 @@ TODO: Add long description of the pod here.
   #}
   
   s.resource_bundles = {
-    'WebChatPod' => ['WebChatPod/Classes/evawebchat/*(.png,.js,.html,.scxml,.xml,.svg)']
+    'WebChatPod' => ['WebChatPod/Classes/**/*.png'],
+    'WebChatPod' => ['WebChatPod/Classes/**/*.js'],
+    'WebChatPod' => ['WebChatPod/Classes/**/*.scxml'],
+    'WebChatPod' => ['WebChatPod/Classes/**/*.js'],
+    'WebChatPod' => ['WebChatPod/Classes/**/*.svg'],
+    'WebChatPod' => ['WebChatPod/Classes/**/*.xsd']
   }
   s.resources = ["WebChatPod/Classes/**/*.xib"]
 

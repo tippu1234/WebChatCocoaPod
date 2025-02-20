@@ -57,7 +57,10 @@ TODO: Add long description of the pod here.
     "WebChatPod/Classes/evawebchat/assets/images/*.svg"
   ]
 
-
+  s.exclude_files = [
+      "WebChatPod/Classes/evawebchat/svg/*.svg",
+      "WebChatPod/Classes/**/*.svg" 
+  ]
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'

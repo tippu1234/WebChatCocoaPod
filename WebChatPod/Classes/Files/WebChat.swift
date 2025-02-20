@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import WebChatPod
 
 public protocol EVAWebChatCameraDelegate {
     

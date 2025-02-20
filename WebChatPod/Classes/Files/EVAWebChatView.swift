@@ -336,7 +336,7 @@ extension EVAWebChatView:WKNavigationDelegate {
             return
         }
         
-        if mMainDocumentChanging_ ?? true {
+        if mMainDocumentChanging_ {
             mLoadingCounter_? -= 1
         }
         
@@ -360,9 +360,9 @@ extension EVAWebChatView:WKNavigationDelegate {
             
             print("EVAWebChatView: Error loading URL \(failingUrlString ?? ""); Error Description = \(error.localizedDescription)")
             
-            let errorStr = error.localizedDescription
-            let errorCode = (error as NSError).code
-            let errorDomain = (error as NSError).domain
+            _ = error.localizedDescription
+            _ = (error as NSError).code
+            _ = (error as NSError).domain
 
             /*let error = WorkbenchError(errorCode: WorkbenchError.page_LOAD_ERROR())
             error?.reason = errorStr
@@ -424,7 +424,7 @@ extension EVAWebChatView:WKNavigationDelegate {
                 
 //                mComponent_?.raiseIMEvent(Event.URLChanged.rawValue, target: "_main", data: mWebView_?.url?.absoluteString ?? "")
                 
-                if let mainDocumentUrl = webView.url {
+                if webView.url != nil {
 //                    let appContext = getApplicationContext(mainDocumentUrl)
                     
                     
@@ -519,7 +519,7 @@ extension EVAWebChatView:WKNavigationDelegate {
         (request.url?.scheme != "about")
         if isMainDocAndNotAboutScheme {
             
-            var strippedWebViewRequestUrl = ""
+            _ = ""
             
             if (webView.url != nil) {
                 

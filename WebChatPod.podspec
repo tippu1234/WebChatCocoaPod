@@ -46,23 +46,23 @@ TODO: Add long description of the pod here.
 
   s.resources = [
     "WebChatPod/Classes/**/*.xib",
-    "WebChatPod/Classes/evawebchat/**/**/**/*.png",
-    "WebChatPod/Classes/evawebchat/**/**/**/*.js",
-    "WebChatPod/Classes/evawebchat/**/**/*.png",
-    "WebChatPod/Classes/evawebchat/**/**/*.svg",
-    "WebChatPod/Classes/evawebchat/**/*.svg",
-    "WebChatPod/Classes/evawebchat/**/*.{scxml,xsd,xml}",
-    "WebChatPod/Classes/evawebchat/**/*.svg",
-    "WebChatPod/Classes/**/*.js",
+    "WebChatPod/Classes/Files/evawebchat/**/**/**/*.png",
+    "WebChatPod/Classes/Files/evawebchat/**/**/**/*.js",
+    "WebChatPod/Classes/Files/evawebchat/**/**/*.png",
+    "WebChatPod/Classes/Files/evawebchat/**/**/*.svg",
+    "WebChatPod/Classes/Files/evawebchat/**/*.svg",
+    "WebChatPod/Classes/Files/evawebchat/**/*.{scxml,xsd,xml}",
+    "WebChatPod/Classes/Files/evawebchat/**/*.svg",
+    "WebChatPod/Classes/Files/**/*.js",
 #    "WebChatPod/Classes/**/*.png",
 #    "WebChatPod/Classes/**/*.svg",
 #    "WebChatPod/Classes/**/*.xsd",
 #    "WebChatPod/Classes/**/*.xml",
 #    "WebChatPod/Classes/**/*.scxml",
-    "WebChatPod/Classes/**/*.svg",
-    "WebChatPod/Classes/**/*.html",
-    "WebChatPod/Classes/**/*.css",
-    "WebChatPod/Classes/**/*.txt"
+    "WebChatPod/Classes/Files/**/*.svg",
+    "WebChatPod/Classes/Files/**/*.html",
+    "WebChatPod/Classes/Files/**/*.css",
+    "WebChatPod/Classes/Files/**/*.txt"
   ]
 
 

@@ -46,7 +46,7 @@ TODO: Add long description of the pod here.
 
   s.resources = [
     "WebChatPod/Classes/**/*.xib",
-    "WebChatPod/Classes/evawebchat/**/*"
+    "WebChatPod/Classes/evawebchat/**/*",
 #    "WebChatPod/Classes/**/*.js",
 ##    "WebChatPod/Classes/**/*.png",
 ##    "WebChatPod/Classes/**/*.svg",

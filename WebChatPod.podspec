@@ -54,11 +54,7 @@ TODO: Add long description of the pod here.
     "WebChatPod/Classes/**/*.html",
     "WebChatPod/Classes/**/*.css",
     "WebChatPod/Classes/**/*.txt",
-    "WebChatPod/Classes/evawebchat/assets/images/*.svg"
-  ]
-
-  s.exclude_files = [
-      "WebChatPod/Classes/evawebchat/svg/*.svg"
+    "WebChatPod/Classes/evawebchat/svg/*.svg"
   ]
 
 

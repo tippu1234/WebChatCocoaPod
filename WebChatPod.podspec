@@ -42,28 +42,20 @@ TODO: Add long description of the pod here.
    # 'VALID_ARCHS' => 'x86_64 armv7 arm64',
   #}
 
-  s.resource_bundles = {
-    'WebChatPod' => [
-      'WebChatPod/Classes/**/*png',
-      'WebChatPod/Classes/**/*js',
-      'WebChatPod/Classes/**/*scxml',
-      'WebChatPod/Classes/**/*svg',
-      'WebChatPod/Classes/**/*xsd'
-    ]
-  }
-
+  
 
   s.resources = [
     "WebChatPod/Classes/**/*.xib",
+    "WebChatPod/Classes/evawebchat/**/*"
 #    "WebChatPod/Classes/**/*.js",
-#    "WebChatPod/Classes/**/*.png",
-#    "WebChatPod/Classes/**/*.svg",
-#    "WebChatPod/Classes/**/*.xsd",
-#    "WebChatPod/Classes/**/*.xml",
-#    "WebChatPod/Classes/**/*.scxml",
+##    "WebChatPod/Classes/**/*.png",
+##    "WebChatPod/Classes/**/*.svg",
+##    "WebChatPod/Classes/**/*.xsd",
+##    "WebChatPod/Classes/**/*.xml",
+##    "WebChatPod/Classes/**/*.scxml",
 #    "WebChatPod/Classes/**/*.html",
 #    "WebChatPod/Classes/**/*.css",
-#    "WebChatPod/Classes/**/*.txt"
+    "WebChatPod/Classes/**/*.txt"
   ]
 
 

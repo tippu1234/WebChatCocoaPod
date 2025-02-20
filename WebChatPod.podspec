@@ -44,7 +44,7 @@ TODO: Add long description of the pod here.
 
   s.resource_bundles = {
     'WebChatPod' => [
-      'Classes/evawebchat/**/*.{png,xml,scxml,xsd,svg,txt,html,css}',
+      'Classes/Files/evawebchat/**/*.{png,xml,scxml,xsd,svg,txt,html,css}',
     ]
   }
   

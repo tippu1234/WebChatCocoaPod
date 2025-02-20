@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WebChatPod'
-  s.version          = '1.0.9'
+  s.version          = '1.1.0'
   s.summary          = 'WebChat Demo Pod'
 
 # This description is used to generate tags and improve search results.
@@ -54,12 +54,13 @@ TODO: Add long description of the pod here.
     "WebChatPod/Classes/**/*.html",
     "WebChatPod/Classes/**/*.css",
     "WebChatPod/Classes/**/*.txt",
+    "WebChatPod/Classes/evawebchat/assets/eva/js/*.js"
     "WebChatPod/Classes/evawebchat/assets/images/*.svg"
   ]
 
   s.exclude_files = [
       "WebChatPod/Classes/evawebchat/svg/*.svg",
-      "WebChatPod/Classes/**/*.svg" 
+      "WebChatPod/Classes/**/*.svg"
   ]
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

@@ -102,7 +102,6 @@
 		E83DB7C72D64822800B90CEE /* snow-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB6512D64822700B90CEE /* snow-outline.svg */; };
 		E83DB7C82D64822800B90CEE /* people-circle.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB5672D64822700B90CEE /* people-circle.svg */; };
 		E83DB7C92D64822800B90CEE /* document-sharp.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB3762D64822700B90CEE /* document-sharp.svg */; };
-		E83DB7CA2D64822800B90CEE /* reload.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB1AA2D64822700B90CEE /* reload.svg */; };
 		E83DB7CB2D64822800B90CEE /* medkit-sharp.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB5142D64822700B90CEE /* medkit-sharp.svg */; };
 		E83DB7CC2D64822800B90CEE /* thumbs-up.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB69B2D64822700B90CEE /* thumbs-up.svg */; };
 		E83DB7CD2D64822800B90CEE /* tv-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB6CC2D64822700B90CEE /* tv-outline.svg */; };
@@ -125,7 +124,6 @@
 		E83DB7DE2D64822800B90CEE /* mail-unread.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB4FD2D64822700B90CEE /* mail-unread.svg */; };
 		E83DB7DF2D64822800B90CEE /* caret-back-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB2B22D64822700B90CEE /* caret-back-outline.svg */; };
 		E83DB7E02D64822800B90CEE /* stop-sharp.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB66A2D64822700B90CEE /* stop-sharp.svg */; };
-		E83DB7E12D64822800B90CEE /* language.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB1A62D64822700B90CEE /* language.svg */; };
 		E83DB7E22D64822800B90CEE /* heart-half.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB4382D64822700B90CEE /* heart-half.svg */; };
 		E83DB7E32D64822800B90CEE /* volume-off-sharp.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB6E82D64822700B90CEE /* volume-off-sharp.svg */; };
 		E83DB7E42D64822800B90CEE /* 4106.cab4918ba2f7690e.js in Resources */ = {isa = PBXBuildFile; fileRef = E83DB7212D64822700B90CEE /* 4106.cab4918ba2f7690e.js */; };
@@ -428,7 +426,6 @@
 		E83DB90F2D64822800B90CEE /* alert.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB1C72D64822700B90CEE /* alert.svg */; };
 		E83DB9102D64822800B90CEE /* storefront.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB66E2D64822700B90CEE /* storefront.svg */; };
 		E83DB9112D64822800B90CEE /* open-sharp.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB5502D64822700B90CEE /* open-sharp.svg */; };
-		E83DB9122D64822800B90CEE /* settings.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB1AC2D64822700B90CEE /* settings.svg */; };
 		E83DB9132D64822800B90CEE /* logo-apple.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB49D2D64822700B90CEE /* logo-apple.svg */; };
 		E83DB9142D64822800B90CEE /* play-circle-sharp.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB5962D64822700B90CEE /* play-circle-sharp.svg */; };
 		E83DB9152D64822800B90CEE /* document-attach.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB36F2D64822700B90CEE /* document-attach.svg */; };
@@ -486,7 +483,6 @@
 		E83DB9492D64822800B90CEE /* 390.92bdc744c08100a8.js in Resources */ = {isa = PBXBuildFile; fileRef = E83DB7052D64822700B90CEE /* 390.92bdc744c08100a8.js */; };
 		E83DB94A2D64822800B90CEE /* bowling-ball-sharp.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB2742D64822700B90CEE /* bowling-ball-sharp.svg */; };
 		E83DB94B2D64822800B90CEE /* train-sharp.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB6B52D64822700B90CEE /* train-sharp.svg */; };
-		E83DB94C2D64822800B90CEE /* shapes.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB1AF2D64822700B90CEE /* shapes.svg */; };
 		E83DB94D2D64822800B90CEE /* git-pull-request-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB40E2D64822700B90CEE /* git-pull-request-outline.svg */; };
 		E83DB94E2D64822800B90CEE /* logo-soundcloud.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB4D82D64822700B90CEE /* logo-soundcloud.svg */; };
 		E83DB94F2D64822800B90CEE /* return-down-forward-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB6032D64822700B90CEE /* return-down-forward-outline.svg */; };
@@ -881,7 +877,6 @@
 		E83DBAD42D64822800B90CEE /* chatbubble-ellipses.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB2D62D64822700B90CEE /* chatbubble-ellipses.svg */; };
 		E83DBAD52D64822800B90CEE /* tennisball-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB68D2D64822700B90CEE /* tennisball-outline.svg */; };
 		E83DBAD62D64822800B90CEE /* person-add.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB56D2D64822700B90CEE /* person-add.svg */; };
-		E83DBAD72D64822800B90CEE /* close.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB1A12D64822700B90CEE /* close.svg */; };
 		E83DBAD82D64822800B90CEE /* telescope.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB6892D64822700B90CEE /* telescope.svg */; };
 		E83DBAD92D64822800B90CEE /* color-fill.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB33B2D64822700B90CEE /* color-fill.svg */; };
 		E83DBADA2D64822800B90CEE /* thermometer-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB6962D64822700B90CEE /* thermometer-outline.svg */; };
@@ -1081,7 +1076,6 @@
 		E83DBB9C2D64822800B90CEE /* folder-open.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB3EA2D64822700B90CEE /* folder-open.svg */; };
 		E83DBB9D2D64822800B90CEE /* checkmark-done-circle.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB2E62D64822700B90CEE /* checkmark-done-circle.svg */; };
 		E83DBB9E2D64822800B90CEE /* brush-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB27C2D64822700B90CEE /* brush-outline.svg */; };
-		E83DBB9F2D64822800B90CEE /* camera.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB19F2D64822700B90CEE /* camera.svg */; };
 		E83DBBA02D64822800B90CEE /* flower-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB3E72D64822700B90CEE /* flower-outline.svg */; };
 		E83DBBA12D64822800B90CEE /* musical-note-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB52E2D64822700B90CEE /* musical-note-outline.svg */; };
 		E83DBBA22D64822800B90CEE /* subway-outline.svg in Resources */ = {isa = PBXBuildFile; fileRef = E83DB6722D64822700B90CEE /* subway-outline.svg */; };
@@ -5012,7 +5006,6 @@
 				E83DB7C72D64822800B90CEE /* snow-outline.svg in Resources */,
 				E83DB7C82D64822800B90CEE /* people-circle.svg in Resources */,
 				E83DB7C92D64822800B90CEE /* document-sharp.svg in Resources */,
-				E83DB7CA2D64822800B90CEE /* reload.svg in Resources */,
 				E83DB7CB2D64822800B90CEE /* medkit-sharp.svg in Resources */,
 				E83DB7CC2D64822800B90CEE /* thumbs-up.svg in Resources */,
 				E83DB7CD2D64822800B90CEE /* tv-outline.svg in Resources */,
@@ -5035,7 +5028,6 @@
 				E83DB7DE2D64822800B90CEE /* mail-unread.svg in Resources */,
 				E83DB7DF2D64822800B90CEE /* caret-back-outline.svg in Resources */,
 				E83DB7E02D64822800B90CEE /* stop-sharp.svg in Resources */,
-				E83DB7E12D64822800B90CEE /* language.svg in Resources */,
 				E83DB7E22D64822800B90CEE /* heart-half.svg in Resources */,
 				E83DB7E32D64822800B90CEE /* volume-off-sharp.svg in Resources */,
 				E83DB7E42D64822800B90CEE /* 4106.cab4918ba2f7690e.js in Resources */,
@@ -5338,7 +5330,6 @@
 				E83DB90F2D64822800B90CEE /* alert.svg in Resources */,
 				E83DB9102D64822800B90CEE /* storefront.svg in Resources */,
 				E83DB9112D64822800B90CEE /* open-sharp.svg in Resources */,
-				E83DB9122D64822800B90CEE /* settings.svg in Resources */,
 				E83DB9132D64822800B90CEE /* logo-apple.svg in Resources */,
 				E83DB9142D64822800B90CEE /* play-circle-sharp.svg in Resources */,
 				E83DB9152D64822800B90CEE /* document-attach.svg in Resources */,
@@ -5396,7 +5387,6 @@
 				E83DB9492D64822800B90CEE /* 390.92bdc744c08100a8.js in Resources */,
 				E83DB94A2D64822800B90CEE /* bowling-ball-sharp.svg in Resources */,
 				E83DB94B2D64822800B90CEE /* train-sharp.svg in Resources */,
-				E83DB94C2D64822800B90CEE /* shapes.svg in Resources */,
 				E83DB94D2D64822800B90CEE /* git-pull-request-outline.svg in Resources */,
 				E83DB94E2D64822800B90CEE /* logo-soundcloud.svg in Resources */,
 				E83DB94F2D64822800B90CEE /* return-down-forward-outline.svg in Resources */,
@@ -5791,7 +5781,6 @@
 				E83DBAD42D64822800B90CEE /* chatbubble-ellipses.svg in Resources */,
 				E83DBAD52D64822800B90CEE /* tennisball-outline.svg in Resources */,
 				E83DBAD62D64822800B90CEE /* person-add.svg in Resources */,
-				E83DBAD72D64822800B90CEE /* close.svg in Resources */,
 				E83DBAD82D64822800B90CEE /* telescope.svg in Resources */,
 				E83DBAD92D64822800B90CEE /* color-fill.svg in Resources */,
 				E83DBADA2D64822800B90CEE /* thermometer-outline.svg in Resources */,
@@ -5991,7 +5980,6 @@
 				E83DBB9C2D64822800B90CEE /* folder-open.svg in Resources */,
 				E83DBB9D2D64822800B90CEE /* checkmark-done-circle.svg in Resources */,
 				E83DBB9E2D64822800B90CEE /* brush-outline.svg in Resources */,
-				E83DBB9F2D64822800B90CEE /* camera.svg in Resources */,
 				E83DBBA02D64822800B90CEE /* flower-outline.svg in Resources */,
 				E83DBBA12D64822800B90CEE /* musical-note-outline.svg in Resources */,
 				E83DBBA22D64822800B90CEE /* subway-outline.svg in Resources */,

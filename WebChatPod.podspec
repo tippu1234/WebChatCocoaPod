@@ -57,7 +57,7 @@ TODO: Add long description of the pod here.
     "WebChatPod/Classes/evawebchat/assets/eva/js/*.js",
 #    "WebChatPod/Classes/evawebchat/assets/images/*.svg"
   ]
-  s.preserve_paths = 'WebChatPod/Classes/Files/evawebchat/assets/images/*.svg'
+  s.preserve_paths = 'WebChatPod/Classes/**/*.svg'
 
 #  s.exclude_files = [
 #      "WebChatPod/Classes/evawebchat/svg/*.svg",
